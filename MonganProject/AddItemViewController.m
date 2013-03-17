@@ -34,9 +34,10 @@
 }
 
 - (void) scanView:(UIView *)scanView didCaptureResult:(NSString *)result {
-	NSLog(@"got result!");
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelButtonClicked:(UIButton *)sender {
 }
+
 @end
