@@ -17,10 +17,10 @@
 		48278D9B16F502C5009DF966 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48278D9A16F502C5009DF966 /* Default@2x.png */; };
 		48278D9D16F502C5009DF966 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48278D9C16F502C5009DF966 /* Default-568h@2x.png */; };
 		48278DA016F502C5009DF966 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48278D9E16F502C5009DF966 /* MainStoryboard.storyboard */; };
-		48278DA316F502C5009DF966 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DA216F502C5009DF966 /* RootViewController.m */; };
+		48278DA316F502C5009DF966 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DA216F502C5009DF966 /* AddItemViewController.m */; };
 		48278DA516F502C5009DF966 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 48278DA416F502C5009DF966 /* first.png */; };
 		48278DA716F502C5009DF966 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48278DA616F502C5009DF966 /* first@2x.png */; };
-		48278DAA16F502C5009DF966 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DA916F502C5009DF966 /* ListViewController.m */; };
+		48278DAA16F502C5009DF966 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DA916F502C5009DF966 /* RootViewController.m */; };
 		48278DAC16F502C5009DF966 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 48278DAB16F502C5009DF966 /* second.png */; };
 		48278DAE16F502C5009DF966 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48278DAD16F502C5009DF966 /* second@2x.png */; };
 		48278DBC16F505F1009DF966 /* DesiredItemTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DBB16F505F1009DF966 /* DesiredItemTableViewDataSource.m */; };
@@ -251,6 +251,18 @@
 		4827960616F56B66009DF966 /* GTLUseritemsDesiredItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 482795F816F56B66009DF966 /* GTLUseritemsDesiredItem.m */; };
 		4827960716F56B66009DF966 /* GTLUseritemsDesiredItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 482795FA16F56B66009DF966 /* GTLUseritemsDesiredItemCollection.m */; };
 		4827960816F56B66009DF966 /* GTLUseritemsKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 482795FC16F56B66009DF966 /* GTLUseritemsKey.m */; };
+		48FC3F8A16F66DFE00DBA723 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F8116F66DFE00DBA723 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48FC3F8B16F66DFE00DBA723 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F8316F66DFE00DBA723 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48FC3F8C16F66DFE00DBA723 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F8516F66DFE00DBA723 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48FC3F8D16F66DFE00DBA723 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F8716F66DFE00DBA723 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48FC3F8E16F66DFE00DBA723 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F8916F66DFE00DBA723 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48FC3FA116F66E4D00DBA723 /* GTMOAuth2Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F9416F66E4D00DBA723 /* GTMOAuth2Authentication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48FC3FA216F66E4D00DBA723 /* GTMOAuth2SignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F9616F66E4D00DBA723 /* GTMOAuth2SignIn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48FC3FA616F66E4D00DBA723 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48FC3F9C16F66E4D00DBA723 /* ReleaseNotes.txt */; };
+		48FC3FA716F66E4D00DBA723 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F9F16F66E4D00DBA723 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48FC3FA816F66E4D00DBA723 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FC3FA016F66E4D00DBA723 /* GTMOAuth2ViewTouch.xib */; };
+		48FC3FB216F66ED300DBA723 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FC3FB116F66ED300DBA723 /* Security.framework */; };
+		48FC3FB416F66F0600DBA723 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FC3FB316F66F0600DBA723 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +279,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 4F74D92F11E68BD300F2D927;
 			remoteInfo = UnitTests;
+		};
+		48FC3FAD16F66E4D00DBA723 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48FC3F9016F66E4D00DBA723 /* GTMOAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = OAuthTouchStaticLib;
+		};
+		48FC3FAF16F66E4D00DBA723 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48FC3F9016F66E4D00DBA723 /* GTMOAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4FC754FA13E77E25006A0C26;
+			remoteInfo = OAuthTouchNonGoogleStaticLib;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -285,12 +311,12 @@
 		48278D9A16F502C5009DF966 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		48278D9C16F502C5009DF966 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		48278D9F16F502C5009DF966 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		48278DA116F502C5009DF966 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		48278DA216F502C5009DF966 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		48278DA116F502C5009DF966 /* AddItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		48278DA216F502C5009DF966 /* AddItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 		48278DA416F502C5009DF966 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		48278DA616F502C5009DF966 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		48278DA816F502C5009DF966 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		48278DA916F502C5009DF966 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		48278DA816F502C5009DF966 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		48278DA916F502C5009DF966 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		48278DAB16F502C5009DF966 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		48278DAD16F502C5009DF966 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		48278DBA16F505F1009DF966 /* DesiredItemTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesiredItemTableViewDataSource.h; sourceTree = "<group>"; };
@@ -756,6 +782,29 @@
 		482795FA16F56B66009DF966 /* GTLUseritemsDesiredItemCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUseritemsDesiredItemCollection.m; sourceTree = "<group>"; };
 		482795FB16F56B66009DF966 /* GTLUseritemsKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUseritemsKey.h; sourceTree = "<group>"; };
 		482795FC16F56B66009DF966 /* GTLUseritemsKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUseritemsKey.m; sourceTree = "<group>"; };
+		48FC3F0A16F663A000DBA723 /* MonganProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MonganProject.entitlements; sourceTree = "<group>"; };
+		48FC3F7F16F66DFE00DBA723 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		48FC3F8016F66DFE00DBA723 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		48FC3F8116F66DFE00DBA723 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		48FC3F8216F66DFE00DBA723 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		48FC3F8316F66DFE00DBA723 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		48FC3F8416F66DFE00DBA723 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		48FC3F8516F66DFE00DBA723 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		48FC3F8616F66DFE00DBA723 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		48FC3F8716F66DFE00DBA723 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		48FC3F8816F66DFE00DBA723 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		48FC3F8916F66DFE00DBA723 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		48FC3F9016F66E4D00DBA723 /* GTMOAuth2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GTMOAuth2.xcodeproj; sourceTree = "<group>"; };
+		48FC3F9316F66E4D00DBA723 /* GTMOAuth2Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2Authentication.h; sourceTree = "<group>"; };
+		48FC3F9416F66E4D00DBA723 /* GTMOAuth2Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2Authentication.m; sourceTree = "<group>"; };
+		48FC3F9516F66E4D00DBA723 /* GTMOAuth2SignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2SignIn.h; sourceTree = "<group>"; };
+		48FC3F9616F66E4D00DBA723 /* GTMOAuth2SignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2SignIn.m; sourceTree = "<group>"; };
+		48FC3F9C16F66E4D00DBA723 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
+		48FC3F9E16F66E4D00DBA723 /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
+		48FC3F9F16F66E4D00DBA723 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
+		48FC3FA016F66E4D00DBA723 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
+		48FC3FB116F66ED300DBA723 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		48FC3FB316F66F0600DBA723 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -763,6 +812,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FC3FB416F66F0600DBA723 /* SystemConfiguration.framework in Frameworks */,
+				48FC3FB216F66ED300DBA723 /* Security.framework in Frameworks */,
 				48278DF116F51BBC009DF966 /* ImageIO.framework in Frameworks */,
 				48278DED16F51057009DF966 /* QuartzCore.framework in Frameworks */,
 				48278DEB16F50E51009DF966 /* CoreVideo.framework in Frameworks */,
@@ -798,6 +849,8 @@
 			isa = PBXGroup;
 			children = (
 				48278DF216F51C08009DF966 /* ZXingObjC */,
+				48FC3FB316F66F0600DBA723 /* SystemConfiguration.framework */,
+				48FC3FB116F66ED300DBA723 /* Security.framework */,
 				48278DF016F51BBC009DF966 /* ImageIO.framework */,
 				48278DEC16F51057009DF966 /* QuartzCore.framework */,
 				48278DEA16F50E51009DF966 /* CoreVideo.framework */,
@@ -813,6 +866,7 @@
 		48278D8C16F502C5009DF966 /* MonganProject */ = {
 			isa = PBXGroup;
 			children = (
+				48FC3F0A16F663A000DBA723 /* MonganProject.entitlements */,
 				482795E416F56B65009DF966 /* API */,
 				4827907116F55CFC009DF966 /* GTL */,
 				48278DB916F5042B009DF966 /* View Controllers */,
@@ -859,10 +913,10 @@
 		48278DB916F5042B009DF966 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				48278DA116F502C5009DF966 /* RootViewController.h */,
-				48278DA216F502C5009DF966 /* RootViewController.m */,
-				48278DA816F502C5009DF966 /* ListViewController.h */,
-				48278DA916F502C5009DF966 /* ListViewController.m */,
+				48278DA816F502C5009DF966 /* RootViewController.h */,
+				48278DA916F502C5009DF966 /* RootViewController.m */,
+				48278DA116F502C5009DF966 /* AddItemViewController.h */,
+				48278DA216F502C5009DF966 /* AddItemViewController.m */,
 				4827904116F5388A009DF966 /* ScanViewController.h */,
 				4827904216F5388A009DF966 /* ScanViewController.m */,
 				4827904916F5587B009DF966 /* ResultViewController.h */,
@@ -1491,6 +1545,8 @@
 			isa = PBXGroup;
 			children = (
 				4827907216F55D0C009DF966 /* GTLDefines.h */,
+				48FC3F8F16F66E4D00DBA723 /* OAuth2 */,
+				48FC3F7E16F66DFE00DBA723 /* JSON */,
 				4827907316F55D30009DF966 /* HTTPFetcher */,
 				4827909816F55D30009DF966 /* Objects */,
 				482790AB16F55D30009DF966 /* Utilities */,
@@ -1605,6 +1661,57 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		48FC3F7E16F66DFE00DBA723 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				48FC3F7F16F66DFE00DBA723 /* JSON.h */,
+				48FC3F8016F66DFE00DBA723 /* NSObject+SBJSON.h */,
+				48FC3F8116F66DFE00DBA723 /* NSObject+SBJSON.m */,
+				48FC3F8216F66DFE00DBA723 /* NSString+SBJSON.h */,
+				48FC3F8316F66DFE00DBA723 /* NSString+SBJSON.m */,
+				48FC3F8416F66DFE00DBA723 /* SBJsonBase.h */,
+				48FC3F8516F66DFE00DBA723 /* SBJsonBase.m */,
+				48FC3F8616F66DFE00DBA723 /* SBJsonParser.h */,
+				48FC3F8716F66DFE00DBA723 /* SBJsonParser.m */,
+				48FC3F8816F66DFE00DBA723 /* SBJsonWriter.h */,
+				48FC3F8916F66DFE00DBA723 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		48FC3F8F16F66E4D00DBA723 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				48FC3F9016F66E4D00DBA723 /* GTMOAuth2.xcodeproj */,
+				48FC3F9316F66E4D00DBA723 /* GTMOAuth2Authentication.h */,
+				48FC3F9416F66E4D00DBA723 /* GTMOAuth2Authentication.m */,
+				48FC3F9516F66E4D00DBA723 /* GTMOAuth2SignIn.h */,
+				48FC3F9616F66E4D00DBA723 /* GTMOAuth2SignIn.m */,
+				48FC3F9C16F66E4D00DBA723 /* ReleaseNotes.txt */,
+				48FC3F9D16F66E4D00DBA723 /* Touch */,
+			);
+			path = OAuth2;
+			sourceTree = "<group>";
+		};
+		48FC3F9116F66E4D00DBA723 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48FC3FAE16F66E4D00DBA723 /* libOAuthTouch2.a */,
+				48FC3FB016F66E4D00DBA723 /* libOAuthTouch2.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48FC3F9D16F66E4D00DBA723 /* Touch */ = {
+			isa = PBXGroup;
+			children = (
+				48FC3F9E16F66E4D00DBA723 /* GTMOAuth2ViewControllerTouch.h */,
+				48FC3F9F16F66E4D00DBA723 /* GTMOAuth2ViewControllerTouch.m */,
+				48FC3FA016F66E4D00DBA723 /* GTMOAuth2ViewTouch.xib */,
+			);
+			path = Touch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1649,6 +1756,10 @@
 					ProductGroup = 4827907916F55D30009DF966 /* Products */;
 					ProjectRef = 4827907816F55D30009DF966 /* GTMHTTPFetcher.xcodeproj */;
 				},
+				{
+					ProductGroup = 48FC3F9116F66E4D00DBA723 /* Products */;
+					ProjectRef = 48FC3F9016F66E4D00DBA723 /* GTMOAuth2.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1672,6 +1783,20 @@
 			remoteRef = 482790DB16F55D30009DF966 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		48FC3FAE16F66E4D00DBA723 /* libOAuthTouch2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOAuthTouch2.a;
+			remoteRef = 48FC3FAD16F66E4D00DBA723 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		48FC3FB016F66E4D00DBA723 /* libOAuthTouch2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOAuthTouch2.a;
+			remoteRef = 48FC3FAF16F66E4D00DBA723 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1690,6 +1815,8 @@
 				48278DAE16F502C5009DF966 /* second@2x.png in Resources */,
 				482790BD16F55D30009DF966 /* ReleaseNotes.txt in Resources */,
 				482790C916F55D30009DF966 /* UnitTests-Info.plist in Resources */,
+				48FC3FA616F66E4D00DBA723 /* ReleaseNotes.txt in Resources */,
+				48FC3FA816F66E4D00DBA723 /* GTMOAuth2ViewTouch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1702,8 +1829,8 @@
 			files = (
 				48278D9316F502C5009DF966 /* main.m in Sources */,
 				48278D9716F502C5009DF966 /* AppDelegate.m in Sources */,
-				48278DA316F502C5009DF966 /* RootViewController.m in Sources */,
-				48278DAA16F502C5009DF966 /* ListViewController.m in Sources */,
+				48278DA316F502C5009DF966 /* AddItemViewController.m in Sources */,
+				48278DAA16F502C5009DF966 /* RootViewController.m in Sources */,
 				48278DBC16F505F1009DF966 /* DesiredItemTableViewDataSource.m in Sources */,
 				48278DBF16F506CA009DF966 /* OwnedItemTableViewDataSource.m in Sources */,
 				48278DC216F5071E009DF966 /* NeedItemTableViewDataSource.m in Sources */,
@@ -1925,6 +2052,14 @@
 				4827960616F56B66009DF966 /* GTLUseritemsDesiredItem.m in Sources */,
 				4827960716F56B66009DF966 /* GTLUseritemsDesiredItemCollection.m in Sources */,
 				4827960816F56B66009DF966 /* GTLUseritemsKey.m in Sources */,
+				48FC3F8A16F66DFE00DBA723 /* NSObject+SBJSON.m in Sources */,
+				48FC3F8B16F66DFE00DBA723 /* NSString+SBJSON.m in Sources */,
+				48FC3F8C16F66DFE00DBA723 /* SBJsonBase.m in Sources */,
+				48FC3F8D16F66DFE00DBA723 /* SBJsonParser.m in Sources */,
+				48FC3F8E16F66DFE00DBA723 /* SBJsonWriter.m in Sources */,
+				48FC3FA116F66E4D00DBA723 /* GTMOAuth2Authentication.m in Sources */,
+				48FC3FA216F66E4D00DBA723 /* GTMOAuth2SignIn.m in Sources */,
+				48FC3FA716F66E4D00DBA723 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2009,6 +2144,7 @@
 		48278DB216F502C5009DF966 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MonganProject/MonganProject.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -2030,6 +2166,7 @@
 		48278DB316F502C5009DF966 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MonganProject/MonganProject.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
