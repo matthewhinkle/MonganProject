@@ -13,4 +13,6 @@
 
 @interface AddItemViewController : UIViewController <ScanViewDelegate>
 
+- (IBAction)cancelButtonClicked:(UIButton *)sender;
+
 @end

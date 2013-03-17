@@ -37,4 +37,6 @@
 	NSLog(@"got result!");
 }
 
+- (IBAction)cancelButtonClicked:(UIButton *)sender {
+}
 @end

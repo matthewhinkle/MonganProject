@@ -10,4 +10,5 @@
 
 @interface ResultViewController : UITableViewController
 
+
 @end

@@ -1,0 +1,166 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://monganproject.appspot.com/_ah/api",
+  "name" : "product",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "http://monganproject.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "product.update" : {
+      "path" : "product",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "ProductEndpoint.update",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "product.search.upc" : {
+      "path" : "requestByUpc/{upc}",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "ProductEndpoint.requestByUpc",
+      "request" : {
+        "parameters" : {
+          "upc" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "product.search.name" : {
+      "path" : "requestByName/{name}",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "ProductEndpoint.requestByName",
+      "request" : {
+        "parameters" : {
+          "name" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "product.insert" : {
+      "path" : "product",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "ProductEndpoint.insert",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Product" : {
+        "id" : "Product",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string"
+          },
+          "upcCode" : {
+            "type" : "string"
+          },
+          "productName" : {
+            "type" : "string"
+          },
+          "priceTime100" : {
+            "type" : "integer"
+          },
+          "imageUrl" : {
+            "type" : "string"
+          },
+          "productDiscription" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ProductCollection" : {
+        "id" : "ProductCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Product"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "ProductEndpoint.update" : {
+        "request" : {
+          "$ref" : "Product"
+        },
+        "response" : {
+          "$ref" : "Product"
+        }
+      },
+      "ProductEndpoint.requestByUpc" : {
+        "response" : {
+          "$ref" : "ProductCollection"
+        }
+      },
+      "ProductEndpoint.requestByName" : {
+        "response" : {
+          "$ref" : "ProductCollection"
+        }
+      },
+      "ProductEndpoint.insert" : {
+        "request" : {
+          "$ref" : "Product"
+        },
+        "response" : {
+          "$ref" : "Product"
+        }
+      }
+    }
+  }
+}

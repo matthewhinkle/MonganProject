@@ -10,10 +10,9 @@
 
 #import "GTLServiceProduct.h"
 #import "GTLQueryProduct.h"
-#import "GTMOAuth2Authentication.h"
-#import "GTMOAuth2SignIn.h"
-#import "GTMOAuth2ViewControllerTouch.h"
 
 @interface RootViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *tabsBar;
 
 @end

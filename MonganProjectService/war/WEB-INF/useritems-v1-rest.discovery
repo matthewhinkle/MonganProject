@@ -1,0 +1,186 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"2MERlHgXUfSlVQnFAL3vX-58eZg/26i0IOFeYO_YE2dPSvS_nN1sUJM\"",
+ "discoveryVersion": "v1",
+ "id": "useritems:v1",
+ "name": "useritems",
+ "version": "v1",
+ "description": "This is an API",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://monganproject.appspot.com/_ah/api/useritems/v1/",
+ "basePath": "/_ah/api/useritems/v1/",
+ "rootUrl": "https://monganproject.appspot.com/_ah/api/",
+ "servicePath": "useritems/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "schemas": {
+  "DesiredItem": {
+   "id": "DesiredItem",
+   "type": "object",
+   "properties": {
+    "desired": {
+     "type": "string",
+     "format": "int64"
+    },
+    "key": {
+     "$ref": "Key"
+    },
+    "owned": {
+     "type": "string",
+     "format": "int64"
+    },
+    "productKey": {
+     "$ref": "Key"
+    },
+    "userId": {
+     "type": "string"
+    }
+   }
+  },
+  "DesiredItemCollection": {
+   "id": "DesiredItemCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "DesiredItem"
+     }
+    }
+   }
+  },
+  "Key": {
+   "id": "Key",
+   "type": "object",
+   "properties": {
+    "appId": {
+     "type": "string"
+    },
+    "complete": {
+     "type": "boolean"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "kind": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "namespace": {
+     "type": "string"
+    },
+    "parent": {
+     "$ref": "Key"
+    }
+   }
+  }
+ },
+ "methods": {
+  "delete": {
+   "id": "useritems.delete",
+   "path": "delete/{productKey}",
+   "httpMethod": "DELETE",
+   "parameters": {
+    "productKey": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "productKey"
+   ]
+  },
+  "list": {
+   "id": "useritems.list",
+   "path": "desireditem",
+   "httpMethod": "GET",
+   "response": {
+    "$ref": "DesiredItemCollection"
+   }
+  },
+  "upsert": {
+   "id": "useritems.upsert",
+   "path": "upsert/{productKey}/{desired}/{have}",
+   "httpMethod": "POST",
+   "parameters": {
+    "desired": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    },
+    "have": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    },
+    "productKey": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "productKey",
+    "desired",
+    "have"
+   ],
+   "response": {
+    "$ref": "DesiredItem"
+   }
+  }
+ }
+}
