@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		278A495C16F68186002F9806 /* ItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A495B16F68186002F9806 /* ItemDetailsViewController.m */; };
 		48278D8716F502C5009DF966 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8616F502C5009DF966 /* UIKit.framework */; };
 		48278D8916F502C5009DF966 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8816F502C5009DF966 /* Foundation.framework */; };
 		48278D8B16F502C5009DF966 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8A16F502C5009DF966 /* CoreGraphics.framework */; };
@@ -297,6 +298,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		278A495A16F68186002F9806 /* ItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailsViewController.h; sourceTree = "<group>"; };
+		278A495B16F68186002F9806 /* ItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailsViewController.m; sourceTree = "<group>"; };
 		48278D8316F502C5009DF966 /* MonganProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonganProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48278D8616F502C5009DF966 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48278D8816F502C5009DF966 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -921,6 +924,8 @@
 				4827904216F5388A009DF966 /* ScanViewController.m */,
 				4827904916F5587B009DF966 /* ResultViewController.h */,
 				4827904A16F5587B009DF966 /* ResultViewController.m */,
+				278A495A16F68186002F9806 /* ItemDetailsViewController.h */,
+				278A495B16F68186002F9806 /* ItemDetailsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -2060,6 +2065,7 @@
 				48FC3FA116F66E4D00DBA723 /* GTMOAuth2Authentication.m in Sources */,
 				48FC3FA216F66E4D00DBA723 /* GTMOAuth2SignIn.m in Sources */,
 				48FC3FA716F66E4D00DBA723 /* GTMOAuth2ViewControllerTouch.m in Sources */,
+				278A495C16F68186002F9806 /* ItemDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
