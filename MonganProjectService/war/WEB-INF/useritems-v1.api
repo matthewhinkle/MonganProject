@@ -1,0 +1,164 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://monganproject.appspot.com/_ah/api",
+  "name" : "useritems",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "http://monganproject.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "useritems.delete" : {
+      "path" : "delete/{productKey}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID", "284201423717.apps.googleusercontent.com" ],
+      "rosyMethod" : "DesiredItemEndpoint.delete",
+      "request" : {
+        "parameters" : {
+          "productKey" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "useritems.list" : {
+      "path" : "desireditem",
+      "httpMethod" : "GET",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID", "284201423717.apps.googleusercontent.com" ],
+      "rosyMethod" : "DesiredItemEndpoint.list",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "useritems.upsert" : {
+      "path" : "upsert/{productKey}/{desired}/{have}",
+      "httpMethod" : "GET",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID", "284201423717.apps.googleusercontent.com" ],
+      "rosyMethod" : "DesiredItemEndpoint.upsert",
+      "request" : {
+        "parameters" : {
+          "productKey" : {
+            "type" : "string",
+            "required" : true
+          },
+          "desired" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "have" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "User" : {
+        "id" : "User",
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string"
+          },
+          "authDomain" : {
+            "type" : "string"
+          },
+          "userId" : {
+            "type" : "string"
+          },
+          "federatedIdentity" : {
+            "type" : "string"
+          },
+          "nickname" : {
+            "type" : "string"
+          }
+        }
+      },
+      "DesiredItem" : {
+        "id" : "DesiredItem",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string"
+          },
+          "productKey" : {
+            "type" : "string"
+          },
+          "userId" : {
+            "type" : "string"
+          },
+          "desired" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "owned" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "DesiredItemCollection" : {
+        "id" : "DesiredItemCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "DesiredItem"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "DesiredItemEndpoint.delete" : {
+      },
+      "DesiredItemEndpoint.list" : {
+        "response" : {
+          "$ref" : "DesiredItemCollection"
+        }
+      },
+      "DesiredItemEndpoint.upsert" : {
+        "response" : {
+          "$ref" : "DesiredItem"
+        }
+      }
+    }
+  }
+}
