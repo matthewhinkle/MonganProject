@@ -47,6 +47,7 @@
 	
 	assert(!(error));
 	[[self productService] setAuthorizer:auth];
+	[auth setAccessToken:[[auth parameters] objectForKey:@"id_token"]];
 }
 
 - (GTLServiceProduct *) productService {
