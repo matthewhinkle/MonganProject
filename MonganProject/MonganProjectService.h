@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GTLServiceProduct.h"
+#import "GTLServiceUseritems.h"
 
 @interface MonganProjectService : NSObject
+
++ (MonganProjectService *) sharedInstance;
+- (GTLServiceProduct *) productService;
 
 @end

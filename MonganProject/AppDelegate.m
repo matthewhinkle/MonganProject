@@ -10,16 +10,6 @@
 
 @implementation AppDelegate
 
-- (GTLServiceProduct *) productService {
-	static GTLServiceProduct * service = nil;
-	if(!(service)) {
-		service = [[GTLServiceProduct alloc] init];
-		[service setRetryEnabled:YES];
-	}
-	
-	return service;
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
