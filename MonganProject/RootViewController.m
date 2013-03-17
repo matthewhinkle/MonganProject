@@ -1,5 +1,5 @@
 //
-//  FirstViewController.m
+//  SecondViewController.m
 //  MonganProject
 //
 //  Created by Matthew Hinkle on 3/16/13.
@@ -9,7 +9,6 @@
 #import "RootViewController.h"
 
 @interface RootViewController ()
-@property (nonatomic, strong) ZXCapture * capture;
 @end
 
 @implementation RootViewController
@@ -17,6 +16,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+	
+	[self authenticate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,16 +27,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)didTouchUpInsideScanButton:(id)sender {
-	ScanViewController * controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ScanViewController"];
+- (void) authenticate {
+	NSString * const scope = @"https://www.googleapis.com/auth/userinfo.email";
 	
-	[controller setDelegate:self];
+	GTMOAuth2ViewControllerTouch * viewController =
+	[[GTMOAuth2ViewControllerTouch alloc] initWithScope:scope
+											   clientID:kClientId
+										   clientSecret:kClientSecret
+									   keychainItemName:kKeychainItemName
+									  completionHandler:^(GTMOAuth2ViewControllerTouch *viewController, GTMOAuth2Authentication *auth, NSError *error) {
+										  [self viewController:viewController finishedWithAuth:auth error:error];
+									}];
 	
-	[self presentViewController:controller animated:YES completion:nil];
+	[self presentViewController:viewController animated:YES completion:nil];
 }
 
-- (void) scanView:(UIView *)scanView didCaptureResult:(NSString *)result {
-	NSLog(@"got result!");
+- (void) viewController:(GTMOAuth2ViewControllerTouch *)viewController finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error {
+	[self dismissViewControllerAnimated:YES completion:nil];
+	
+	assert(!(error));
+	[[self productService] setAuthorizer:auth];
+}
+
+- (GTLServiceProduct *) productService {
+	static GTLServiceProduct * service = nil;
+	if(!(service)) {
+		service = [[GTLServiceProduct alloc] init];
+		[service setRetryEnabled:YES];
+	}
+	
+	return service;
 }
 
 @end

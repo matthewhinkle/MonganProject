@@ -12,3 +12,7 @@
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
 #endif
+
+static NSString * const kKeychainItemName = @"MonganProject";
+static NSString * const kClientId = @"284201423717.apps.googleusercontent.com";
+static NSString * const kClientSecret = @"ORFU98A36wcGh-A2EGEnXAUx";
