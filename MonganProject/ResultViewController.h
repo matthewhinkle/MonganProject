@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ResultViewController.h
 //  MonganProject
 //
 //  Created by Matthew Hinkle on 3/16/13.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ScanViewController.h"
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface ResultViewController : UITableViewController
 
 @end

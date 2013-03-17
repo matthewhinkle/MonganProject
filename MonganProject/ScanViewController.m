@@ -1,5 +1,5 @@
 //
-//  FirstViewController.m
+//  ScanViewController.m
 //  MonganProject
 //
 //  Created by Matthew Hinkle on 3/16/13.
@@ -8,22 +8,30 @@
 
 #import "ScanViewController.h"
 
-@interface ScanViewController ()
-
+@interface ScanViewController()
+@property (nonatomic, strong) ZXCapture * capture;
+@property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
 @end
 
 @implementation ScanViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (void) viewDidLoad {
+	[super viewDidLoad];
+	
+	_capture = [[ZXCapture alloc] init];
+	[_capture setDelegate:self];
+	[_capture setRotation:90.0f];
+	
+	[_capture setCamera:[_capture back]];
+	[[[self view] layer] addSublayer:[_capture layer]];
+	[[_capture layer] setFrame:[[self view] bounds]];
+	[[self view] bringSubviewToFront:_instructionLabel];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) captureResult:(ZXCapture *)capture result:(ZXResult *)result {
+	if(result) {
+		[[self delegate] scanView:[self view] didCaptureResult:[result text]];
+	}
 }
 
 @end
