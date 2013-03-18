@@ -13,7 +13,7 @@
 // Description:
 //   This is an API
 // Classes:
-//   GTLQueryUseritems (3 custom class methods, 4 custom properties)
+//   GTLQueryUseritems (4 custom class methods, 4 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLQuery.h"
@@ -43,6 +43,10 @@
 
 // Method: useritems.delete
 + (id)queryForDeleteWithProductKey:(NSString *)productKey;
+
+// Method: useritems.get
+// Fetches a GTLUseritemsDesiredItem.
++ (id)queryForGetWithProductKey:(NSString *)productKey;
 
 // Method: useritems.list
 // Fetches a GTLUseritemsDesiredItemCollection.

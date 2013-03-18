@@ -13,7 +13,7 @@
 // Description:
 //   This is an API
 // Classes:
-//   GTLQueryUseritems (3 custom class methods, 4 custom properties)
+//   GTLQueryUseritems (4 custom class methods, 4 custom properties)
 
 #import "GTLQueryUseritems.h"
 
@@ -32,6 +32,14 @@
   NSString *methodName = @"useritems.delete";
   GTLQueryUseritems *query = [self queryWithMethodName:methodName];
   query.productKey = productKey;
+  return query;
+}
+
++ (id)queryForGetWithProductKey:(NSString *)productKey {
+  NSString *methodName = @"useritems.get";
+  GTLQueryUseritems *query = [self queryWithMethodName:methodName];
+  query.productKey = productKey;
+  query.expectedObjectClass = [GTLUseritemsDesiredItem class];
   return query;
 }
 
