@@ -10,9 +10,10 @@
 
 #import "DesiredItemAndProductAreBothHeldInThisClass.h"
 
+#import "ModalLoadingOverlayController.h"
 #import "MonganProjectService.h"
 
-@interface ItemDetailsViewController : UIViewController
+@interface ItemDetailsViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) DesiredItemAndProductAreBothHeldInThisClass * item;
 
@@ -31,6 +32,8 @@
 - (IBAction)descriptionReturnPressed:(UITextField *)sender;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+
 
 - (IBAction)saveButtonClicked:(UIButton *)sender;
 

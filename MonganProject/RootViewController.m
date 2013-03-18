@@ -86,8 +86,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue respondsToSelector:@selector(setItem:)]) {
-        [segue performSelector:@selector(setItem:) withObject:self.selected];
+    if([[segue identifier] isEqualToString:@"itemDetails"]) {
+        [[segue destinationViewController] setItem:[self selected]];
     }
 }
 

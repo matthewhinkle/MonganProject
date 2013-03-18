@@ -35,9 +35,11 @@
 }
 
 - (IBAction) didTouchUpInsideScanButton:(id)sender {
-	[self setScanViewController:[[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ScanViewController"]];
+	if(![self scanViewController]) {
+		[self setScanViewController:[[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ScanViewController"]];
 	
-	[[self scanViewController] setDelegate:self];
+		[[self scanViewController] setDelegate:self];
+	}
 	
 	[self presentViewController:[self scanViewController] animated:YES completion:nil];
 }
@@ -47,9 +49,12 @@
 }
 
 - (void) scanView:(UIView *)scanView didCaptureResult:(NSString *)result {
+	NSLog(@"result!");
+
 	[[self scanViewController] dismissViewControllerAnimated:YES completion:^{
 		[self setSearchByUpc:YES];
 		[self setUpc:result];
+		
 		[self performSegueWithIdentifier:@"selectItem" sender:self];
 	}];
 }

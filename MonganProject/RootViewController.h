@@ -13,6 +13,7 @@
 #import "MonganProjectService.h"
 #import "ModalLoadingOverlayController.h"
 #import "InventoryItemCell.h"
+#import "ItemDetailsViewController.h"
 
 @interface RootViewController : UITableViewController
 
