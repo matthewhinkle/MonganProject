@@ -12,6 +12,7 @@
 #import "GTLProduct.h"
 #import "GTLUseritems.h"
 #import "GTLUseritemsDesiredItem.h"
+#import "DesiredItemAndProductAreBothHeldInThisClass.h"
 
 @interface MonganProjectService : NSObject
 

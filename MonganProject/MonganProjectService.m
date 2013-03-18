@@ -45,9 +45,32 @@ static MonganProjectService * instance;
 {
     GTLQueryUseritems * query = [GTLQueryUseritems queryForList];
     [self.userItemService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+        if(error) {
+            handler(ticket, nil, error);
+            return;
+        }
         GTLUseritemsDesiredItemCollection * itemCollection = object;
         NSArray * items = itemCollection.items;
-        
+        if(!items) {
+            handler(ticket, [NSArray array], nil);
+            return;
+        }
+        __block int itemsLeft = items.count;
+        NSMutableArray * ret = [NSMutableArray array];
+        for(GTLUseritemsDesiredItem * item in items) {
+            __block DesiredItemAndProductAreBothHeldInThisClass * thisItem = [[DesiredItemAndProductAreBothHeldInThisClass alloc] init];
+            thisItem.desiredItem = item;
+            [ret addObject:thisItem];
+            GTLQueryProduct * subQuery = [GTLQueryProduct queryForGetWithIdentifier:item.productKey];
+            [self.productService executeQuery:subQuery completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+                thisItem.product = object;
+                 itemsLeft -= 1;
+            }];
+        }
+        while(itemsLeft > 0) {
+            [NSThread sleepForTimeInterval:0];
+        }
+        handler(ticket, ret, nil);
     }];
 }
 
