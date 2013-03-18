@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GTLUseritems.h"
+#import "GTLProduct.h"
 
 @interface DesiredItemAndProductAreBothHeldInThisClass : NSObject
+
+@property GTLUseritemsDesiredItem * desiredItem;
+@property GTLProductProduct * product;
 
 @end

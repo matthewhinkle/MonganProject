@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GTLUseritems.h"
+#import "DesiredItemAndProductAreBothHeldInThisClass.h"
 
 @interface InventoryItemCell : UITableViewCell
 
@@ -17,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 
--(void) renderDesiredItem:(GTLUseritemsDesiredItem *)desiredItem;
+-(void) renderDesiredItem:(DesiredItemAndProductAreBothHeldInThisClass *)item;
 
 @end

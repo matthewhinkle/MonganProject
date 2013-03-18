@@ -26,9 +26,11 @@
     // Configure the view for the selected state
 }
 
--(void) renderDesiredItem:(GTLUseritemsDesiredItem *)desiredItem
+-(void) renderDesiredItem:(DesiredItemAndProductAreBothHeldInThisClass *)item
 {
-//    if(desiredItem.productKey)
+    if(item.product.imageUrl) {
+        self.horizontalSpacer setConstant:<#(CGFloat)#>
+    }
 }
 
 -(void) prepareForReuse
