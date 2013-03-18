@@ -74,4 +74,40 @@ static MonganProjectService * instance;
     }];
 }
 
+- (void) getItemsForUpc:(NSString *)upc withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback {
+	GTLQueryProduct * query = [GTLQueryProduct queryForSearchUpcWithUpc:upc];
+	[[self productService] executeQuery:query completionHandler:^(GTLServiceTicket * ticket, id obj, NSError * error) {
+		if(error) {
+			callback(ticket, nil, error);
+			return;
+		}
+		
+		NSArray * products = [obj items];
+		if(!(products)) {
+			callback(ticket, [NSArray array], nil);
+			return;
+		}
+		
+		callback(ticket, products, nil);
+	}];
+}
+
+- (void) getItemsForProductName:(NSString *)productName withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback {
+	GTLQueryProduct * query = [GTLQueryProduct queryForSearchNameWithName:productName];
+	[[self productService] executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id obj, NSError *error) {
+		if(error) {
+			callback(ticket, nil, error);
+			return;
+		}
+		
+		NSArray * products = [obj items];
+		if(!(products)) {
+			callback(ticket, [NSArray array], nil);
+			return;
+		}
+		
+		callback(ticket, products, nil);
+	}];
+}
+
 @end

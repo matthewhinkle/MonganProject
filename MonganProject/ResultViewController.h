@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultViewController : UITableViewController
+#import "ModalLoadingOverlayController.h"
+#import "MonganProjectService.h"
 
-
+@interface ResultViewController : UITableViewController <UISearchBarDelegate>
+@property (nonatomic, strong) NSString * upc;
+@property (nonatomic) BOOL searchByUpc;
 @end
