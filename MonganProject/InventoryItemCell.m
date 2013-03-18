@@ -28,7 +28,7 @@
 
 -(void) renderDesiredItem:(GTLUseritemsDesiredItem *)desiredItem
 {
-    if(desiredItem.productKey)
+//    if(desiredItem.productKey)
 }
 
 -(void) prepareForReuse

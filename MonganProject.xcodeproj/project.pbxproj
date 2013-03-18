@@ -10,14 +10,12 @@
 		278A495C16F68186002F9806 /* ItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A495B16F68186002F9806 /* ItemDetailsViewController.m */; };
 		278A496516F68A62002F9806 /* MonganProjectService.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A496416F68A62002F9806 /* MonganProjectService.m */; };
 		278A497016F6912B002F9806 /* InventoryItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A496F16F6912B002F9806 /* InventoryItemCell.m */; };
-		278A498516F697A2002F9806 /* GTLProduct_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497116F697A1002F9806 /* GTLProduct_Sources.m */; };
 		278A498616F697A2002F9806 /* GTLProductCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497416F697A1002F9806 /* GTLProductCollection.m */; };
 		278A498716F697A2002F9806 /* GTLProductProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497616F697A1002F9806 /* GTLProductProduct.m */; };
 		278A498816F697A2002F9806 /* GTLQueryProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497816F697A1002F9806 /* GTLQueryProduct.m */; };
 		278A498916F697A2002F9806 /* GTLQueryUseritems.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497A16F697A1002F9806 /* GTLQueryUseritems.m */; };
 		278A498A16F697A2002F9806 /* GTLServiceProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497C16F697A1002F9806 /* GTLServiceProduct.m */; };
 		278A498B16F697A2002F9806 /* GTLServiceUseritems.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497E16F697A2002F9806 /* GTLServiceUseritems.m */; };
-		278A498C16F697A2002F9806 /* GTLUseritems_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497F16F697A2002F9806 /* GTLUseritems_Sources.m */; };
 		278A498D16F697A2002F9806 /* GTLUseritemsDesiredItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A498216F697A2002F9806 /* GTLUseritemsDesiredItem.m */; };
 		278A498E16F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A498416F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m */; };
 		48278D8716F502C5009DF966 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8616F502C5009DF966 /* UIKit.framework */; };
@@ -301,7 +299,6 @@
 		278A496416F68A62002F9806 /* MonganProjectService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonganProjectService.m; sourceTree = "<group>"; };
 		278A496E16F6912B002F9806 /* InventoryItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryItemCell.h; sourceTree = "<group>"; };
 		278A496F16F6912B002F9806 /* InventoryItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryItemCell.m; sourceTree = "<group>"; };
-		278A497116F697A1002F9806 /* GTLProduct_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLProduct_Sources.m; sourceTree = "<group>"; };
 		278A497216F697A1002F9806 /* GTLProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLProduct.h; sourceTree = "<group>"; };
 		278A497316F697A1002F9806 /* GTLProductCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLProductCollection.h; sourceTree = "<group>"; };
 		278A497416F697A1002F9806 /* GTLProductCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLProductCollection.m; sourceTree = "<group>"; };
@@ -315,7 +312,6 @@
 		278A497C16F697A1002F9806 /* GTLServiceProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLServiceProduct.m; sourceTree = "<group>"; };
 		278A497D16F697A2002F9806 /* GTLServiceUseritems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLServiceUseritems.h; sourceTree = "<group>"; };
 		278A497E16F697A2002F9806 /* GTLServiceUseritems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLServiceUseritems.m; sourceTree = "<group>"; };
-		278A497F16F697A2002F9806 /* GTLUseritems_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUseritems_Sources.m; sourceTree = "<group>"; };
 		278A498016F697A2002F9806 /* GTLUseritems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUseritems.h; sourceTree = "<group>"; };
 		278A498116F697A2002F9806 /* GTLUseritemsDesiredItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUseritemsDesiredItem.h; sourceTree = "<group>"; };
 		278A498216F697A2002F9806 /* GTLUseritemsDesiredItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUseritemsDesiredItem.m; sourceTree = "<group>"; };
@@ -861,7 +857,6 @@
 			isa = PBXGroup;
 			children = (
 				48FC3F0A16F663A000DBA723 /* MonganProject.entitlements */,
-				278A497116F697A1002F9806 /* GTLProduct_Sources.m */,
 				278A497216F697A1002F9806 /* GTLProduct.h */,
 				278A497316F697A1002F9806 /* GTLProductCollection.h */,
 				278A497416F697A1002F9806 /* GTLProductCollection.m */,
@@ -875,7 +870,6 @@
 				278A497C16F697A1002F9806 /* GTLServiceProduct.m */,
 				278A497D16F697A2002F9806 /* GTLServiceUseritems.h */,
 				278A497E16F697A2002F9806 /* GTLServiceUseritems.m */,
-				278A497F16F697A2002F9806 /* GTLUseritems_Sources.m */,
 				278A498016F697A2002F9806 /* GTLUseritems.h */,
 				278A498116F697A2002F9806 /* GTLUseritemsDesiredItem.h */,
 				278A498216F697A2002F9806 /* GTLUseritemsDesiredItem.m */,
@@ -2022,14 +2016,12 @@
 				278A495C16F68186002F9806 /* ItemDetailsViewController.m in Sources */,
 				278A496516F68A62002F9806 /* MonganProjectService.m in Sources */,
 				278A497016F6912B002F9806 /* InventoryItemCell.m in Sources */,
-				278A498516F697A2002F9806 /* GTLProduct_Sources.m in Sources */,
 				278A498616F697A2002F9806 /* GTLProductCollection.m in Sources */,
 				278A498716F697A2002F9806 /* GTLProductProduct.m in Sources */,
 				278A498816F697A2002F9806 /* GTLQueryProduct.m in Sources */,
 				278A498916F697A2002F9806 /* GTLQueryUseritems.m in Sources */,
 				278A498A16F697A2002F9806 /* GTLServiceProduct.m in Sources */,
 				278A498B16F697A2002F9806 /* GTLServiceUseritems.m in Sources */,
-				278A498C16F697A2002F9806 /* GTLUseritems_Sources.m in Sources */,
 				278A498D16F697A2002F9806 /* GTLUseritemsDesiredItem.m in Sources */,
 				278A498E16F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m in Sources */,
 			);
