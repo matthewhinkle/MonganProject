@@ -21,9 +21,9 @@
 
 -(void) loadData
 {
-    
+    [[ModalLoadingOverlayController sharedInstance] present];
     [[MonganProjectService sharedInstance] getItemsForUserWithCallback:^(GTLServiceTicket *ticket, id object, NSError *error) {
-        
+            [[ModalLoadingOverlayController sharedInstance] remove];
     }];
 }
 

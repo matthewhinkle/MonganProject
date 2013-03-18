@@ -20,7 +20,7 @@ ModalLoadingOverlayController * instance;
 
 +(void)initialize
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     instance = [storyboard instantiateViewControllerWithIdentifier:@"modalLoadingController"];
     instance.isShown = NO;
 }
