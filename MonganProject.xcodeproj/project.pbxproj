@@ -18,6 +18,7 @@
 		278A498B16F697A2002F9806 /* GTLServiceUseritems.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A497E16F697A2002F9806 /* GTLServiceUseritems.m */; };
 		278A498D16F697A2002F9806 /* GTLUseritemsDesiredItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A498216F697A2002F9806 /* GTLUseritemsDesiredItem.m */; };
 		278A498E16F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A498416F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m */; };
+		278A499116F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A499016F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m */; };
 		48278D8716F502C5009DF966 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8616F502C5009DF966 /* UIKit.framework */; };
 		48278D8916F502C5009DF966 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8816F502C5009DF966 /* Foundation.framework */; };
 		48278D8B16F502C5009DF966 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8A16F502C5009DF966 /* CoreGraphics.framework */; };
@@ -317,6 +318,8 @@
 		278A498216F697A2002F9806 /* GTLUseritemsDesiredItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUseritemsDesiredItem.m; sourceTree = "<group>"; };
 		278A498316F697A2002F9806 /* GTLUseritemsDesiredItemCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUseritemsDesiredItemCollection.h; sourceTree = "<group>"; };
 		278A498416F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUseritemsDesiredItemCollection.m; sourceTree = "<group>"; };
+		278A498F16F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesiredItemAndProductAreBothHeldInThisClass.h; sourceTree = "<group>"; };
+		278A499016F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesiredItemAndProductAreBothHeldInThisClass.m; sourceTree = "<group>"; };
 		48278D8316F502C5009DF966 /* MonganProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonganProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48278D8616F502C5009DF966 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48278D8816F502C5009DF966 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -882,6 +885,8 @@
 				48278D9E16F502C5009DF966 /* MainStoryboard.storyboard */,
 				278A496316F68A62002F9806 /* MonganProjectService.h */,
 				278A496416F68A62002F9806 /* MonganProjectService.m */,
+				278A498F16F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.h */,
+				278A499016F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m */,
 				48278DA416F502C5009DF966 /* first.png */,
 				48278DA616F502C5009DF966 /* first@2x.png */,
 				48278DAB16F502C5009DF966 /* second.png */,
@@ -2024,6 +2029,7 @@
 				278A498B16F697A2002F9806 /* GTLServiceUseritems.m in Sources */,
 				278A498D16F697A2002F9806 /* GTLUseritemsDesiredItem.m in Sources */,
 				278A498E16F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m in Sources */,
+				278A499116F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
