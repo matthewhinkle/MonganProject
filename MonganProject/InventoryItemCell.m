@@ -30,7 +30,12 @@
 {
     if(item.product.imageUrl) {
         [self.horizontalSpacer setConstant:85];
+    } else {
+        [self.horizontalSpacer setConstant:5];
     }
+    self.titleLabel.text = item.product.productName;
+    self.descriptionLabel.text = item.product.description;
+    self.amountLabel = [NSString stringWithFormat:@"%@/%@", item.desiredItem.owned, item.desiredItem.desired];
 }
 
 -(void) prepareForReuse

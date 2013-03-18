@@ -23,7 +23,7 @@
 									   keychainItemName:kKeychainItemName
 									  completionHandler:^(GTMOAuth2ViewControllerTouch *viewController, GTMOAuth2Authentication *auth, NSError *error) {
 										  assert(!(error));
-										  [[[MonganProjectService sharedInstance] productService] setAuthorizer:auth];
+										  [[[MonganProjectService sharedInstance] userItemService] setAuthorizer:auth];
                                           [auth setAccessToken:[[auth parameters] objectForKey:@"id_token"]];
                                           
                                           UIViewController * root = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"roooooooooot"];

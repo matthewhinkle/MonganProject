@@ -31,7 +31,7 @@ static MonganProjectService * instance;
 	return service;
 }
 
-- (GTLServiceUseritems *) userItemService; {
+- (GTLServiceUseritems *) userItemService {
 	static GTLServiceUseritems * service = nil;
 	if(!(service)) {
 		service = [[GTLServiceUseritems alloc] init];
@@ -41,6 +41,12 @@ static MonganProjectService * instance;
 	return service;
 }
 
-
+-(void) getItemsForUserWithCallback:(void (^)(GTLServiceTicket *ticket, id object, NSError *error))handler;
+{
+    GTLQueryUseritems * query = [GTLQueryUseritems queryForList];
+    [self.userItemService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+        
+    }];
+}
 
 @end
