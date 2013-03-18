@@ -29,7 +29,7 @@
 -(void) renderDesiredItem:(DesiredItemAndProductAreBothHeldInThisClass *)item
 {
     if(item.product.imageUrl) {
-        self.horizontalSpacer setConstant:<#(CGFloat)#>
+        [self.horizontalSpacer setConstant:85];
     }
 }
 
