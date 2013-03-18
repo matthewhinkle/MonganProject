@@ -251,6 +251,10 @@
 		482790D416F55D30009DF966 /* GTLFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 482790AF16F55D30009DF966 /* GTLFramework.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		482790D516F55D30009DF966 /* GTLJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 482790B116F55D30009DF966 /* GTLJSONParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		482790D616F55D30009DF966 /* GTLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 482790B416F55D30009DF966 /* GTLUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48AD3B3316F7CB05000B6D2A /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD3B3216F7CB05000B6D2A /* NSData+Base64.m */; };
+		48AD3B3C16F7CC4F000B6D2A /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD3B3B16F7CC4F000B6D2A /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48AD3B3F16F7CCAB000B6D2A /* NSString+URLEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AD3B3E16F7CCAB000B6D2A /* NSString+URLEscape.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48ED0F2C16F7ACF50046CA1F /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 48ED0F2B16F7ACF50046CA1F /* placeholder.png */; };
 		48FC3F8A16F66DFE00DBA723 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F8116F66DFE00DBA723 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48FC3F8B16F66DFE00DBA723 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F8316F66DFE00DBA723 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48FC3F8C16F66DFE00DBA723 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FC3F8516F66DFE00DBA723 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -783,6 +787,13 @@
 		482790B216F55D30009DF966 /* GTLTargetNamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLTargetNamespace.h; sourceTree = "<group>"; };
 		482790B316F55D30009DF966 /* GTLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUtilities.h; sourceTree = "<group>"; };
 		482790B416F55D30009DF966 /* GTLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUtilities.m; sourceTree = "<group>"; };
+		48AD3B3116F7CB05000B6D2A /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		48AD3B3216F7CB05000B6D2A /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		48AD3B3A16F7CC4F000B6D2A /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		48AD3B3B16F7CC4F000B6D2A /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		48AD3B3D16F7CCAB000B6D2A /* NSString+URLEscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEscape.h"; sourceTree = "<group>"; };
+		48AD3B3E16F7CCAB000B6D2A /* NSString+URLEscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEscape.m"; sourceTree = "<group>"; };
+		48ED0F2B16F7ACF50046CA1F /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = MonganProject/placeholder.png; sourceTree = "<group>"; };
 		48FC3F0A16F663A000DBA723 /* MonganProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MonganProject.entitlements; sourceTree = "<group>"; };
 		48FC3F7F16F66DFE00DBA723 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		48FC3F8016F66DFE00DBA723 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
@@ -857,6 +868,7 @@
 		48278D7A16F502C5009DF966 = {
 			isa = PBXGroup;
 			children = (
+				48ED0F2B16F7ACF50046CA1F /* placeholder.png */,
 				48278D8C16F502C5009DF966 /* MonganProject */,
 				48278D8516F502C5009DF966 /* Frameworks */,
 				48278D8416F502C5009DF966 /* Products */,
@@ -905,10 +917,12 @@
 				278A496416F68A62002F9806 /* MonganProjectService.m */,
 				278A498F16F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.h */,
 				278A499016F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m */,
-				48278DA416F502C5009DF966 /* first.png */,
-				48278DA616F502C5009DF966 /* first@2x.png */,
-				48278DAB16F502C5009DF966 /* second.png */,
-				48278DAD16F502C5009DF966 /* second@2x.png */,
+				48AD3B3116F7CB05000B6D2A /* NSData+Base64.h */,
+				48AD3B3216F7CB05000B6D2A /* NSData+Base64.m */,
+				48AD3B3A16F7CC4F000B6D2A /* NSString+URLEncoding.h */,
+				48AD3B3B16F7CC4F000B6D2A /* NSString+URLEncoding.m */,
+				48AD3B3D16F7CCAB000B6D2A /* NSString+URLEscape.h */,
+				48AD3B3E16F7CCAB000B6D2A /* NSString+URLEscape.m */,
 				48278D8D16F502C5009DF966 /* Supporting Files */,
 			);
 			path = MonganProject;
@@ -917,6 +931,10 @@
 		48278D8D16F502C5009DF966 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				48278DA416F502C5009DF966 /* first.png */,
+				48278DA616F502C5009DF966 /* first@2x.png */,
+				48278DAB16F502C5009DF966 /* second.png */,
+				48278DAD16F502C5009DF966 /* second@2x.png */,
 				27D86A4B16F6C104007A4753 /* nothing.png */,
 				48278D8E16F502C5009DF966 /* MonganProject-Info.plist */,
 				48278D8F16F502C5009DF966 /* InfoPlist.strings */,
@@ -1812,6 +1830,7 @@
 				48FC3FA616F66E4D00DBA723 /* ReleaseNotes.txt in Resources */,
 				48FC3FA816F66E4D00DBA723 /* GTMOAuth2ViewTouch.xib in Resources */,
 				27D86A4C16F6C104007A4753 /* nothing.png in Resources */,
+				48ED0F2C16F7ACF50046CA1F /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2054,6 +2073,9 @@
 				27D86A6A16F6C96D007A4753 /* GTLServiceUseritems.m in Sources */,
 				27D86A6C16F6C96D007A4753 /* GTLUseritemsDesiredItem.m in Sources */,
 				27D86A6D16F6C96D007A4753 /* GTLUseritemsDesiredItemCollection.m in Sources */,
+				48AD3B3316F7CB05000B6D2A /* NSData+Base64.m in Sources */,
+				48AD3B3C16F7CC4F000B6D2A /* NSString+URLEncoding.m in Sources */,
+				48AD3B3F16F7CCAB000B6D2A /* NSString+URLEscape.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
