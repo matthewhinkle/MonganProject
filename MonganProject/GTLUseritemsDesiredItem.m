@@ -17,8 +17,6 @@
 
 #import "GTLUseritemsDesiredItem.h"
 
-#import "GTLUseritemsKey.h"
-
 // ----------------------------------------------------------------------------
 //
 //   GTLUseritemsDesiredItem

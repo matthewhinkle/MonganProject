@@ -26,4 +26,14 @@
     // Configure the view for the selected state
 }
 
+-(void) renderDesiredItem:(GTLUseritemsDesiredItem *)desiredItem
+{
+    if(desiredItem.productKey)
+}
+
+-(void) prepareForReuse
+{
+    self.thumbnail.image = nil;
+}
+
 @end

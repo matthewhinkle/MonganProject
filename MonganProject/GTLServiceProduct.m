@@ -26,7 +26,6 @@
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryProduct class],
                       [GTLProductCollection class],
-                      [GTLProductKey class],
                       [GTLProductProduct class],
                       nil];
   return classes;

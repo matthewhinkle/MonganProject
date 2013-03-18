@@ -13,7 +13,7 @@
 // Description:
 //   This is an API
 // Classes:
-//   GTLQueryProduct (4 custom class methods, 3 custom properties)
+//   GTLQueryProduct (6 custom class methods, 10 custom properties)
 
 #import "GTLQueryProduct.h"
 
@@ -22,11 +22,27 @@
 
 @implementation GTLQueryProduct
 
-@dynamic fields, name, upc;
+@dynamic fields, identifier, imageUrl, key, name, priceTime100,
+         productDiscription, productName, upc, upcCode;
+
++ (NSDictionary *)parameterNameMap {
+  NSDictionary *map =
+    [NSDictionary dictionaryWithObject:@"id"
+                                forKey:@"identifier"];
+  return map;
+}
 
 #pragma mark -
 #pragma mark Service level methods
 // These create a GTLQueryProduct object.
+
++ (id)queryForGetWithIdentifier:(NSString *)identifier {
+  NSString *methodName = @"product.get";
+  GTLQueryProduct *query = [self queryWithMethodName:methodName];
+  query.identifier = identifier;
+  query.expectedObjectClass = [GTLProductProduct class];
+  return query;
+}
 
 + (id)queryForInsertWithObject:(GTLProductProduct *)object {
   if (object == nil) {
@@ -36,6 +52,14 @@
   NSString *methodName = @"product.insert";
   GTLQueryProduct *query = [self queryWithMethodName:methodName];
   query.bodyObject = object;
+  query.expectedObjectClass = [GTLProductProduct class];
+  return query;
+}
+
++ (id)queryForPatchWithIdentifier:(NSString *)identifier {
+  NSString *methodName = @"product.patch";
+  GTLQueryProduct *query = [self queryWithMethodName:methodName];
+  query.identifier = identifier;
   query.expectedObjectClass = [GTLProductProduct class];
   return query;
 }

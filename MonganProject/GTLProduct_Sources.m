@@ -17,7 +17,6 @@
 //   This is an API
 
 #import "GTLProductCollection.m"
-#import "GTLProductKey.m"
 #import "GTLProductProduct.m"
 
 #import "GTLQueryProduct.m"

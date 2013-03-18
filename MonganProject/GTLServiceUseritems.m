@@ -27,7 +27,6 @@
                       [GTLQueryUseritems class],
                       [GTLUseritemsDesiredItem class],
                       [GTLUseritemsDesiredItemCollection class],
-                      [GTLUseritemsKey class],
                       nil];
   return classes;
 }

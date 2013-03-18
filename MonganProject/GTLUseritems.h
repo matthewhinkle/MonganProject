@@ -15,7 +15,6 @@
 
 #import "GTLUseritemsDesiredItem.h"
 #import "GTLUseritemsDesiredItemCollection.h"
-#import "GTLUseritemsKey.h"
 
 #import "GTLQueryUseritems.h"
 #import "GTLServiceUseritems.h"

@@ -18,7 +18,6 @@
 
 #import "GTLUseritemsDesiredItem.m"
 #import "GTLUseritemsDesiredItemCollection.m"
-#import "GTLUseritemsKey.m"
 
 #import "GTLQueryUseritems.m"
 #import "GTLServiceUseritems.m"

@@ -21,8 +21,6 @@
   #import "GTLObject.h"
 #endif
 
-@class GTLUseritemsKey;
-
 // ----------------------------------------------------------------------------
 //
 //   GTLUseritemsDesiredItem
@@ -30,8 +28,8 @@
 
 @interface GTLUseritemsDesiredItem : GTLObject
 @property (retain) NSNumber *desired;  // longLongValue
-@property (retain) GTLUseritemsKey *key;
+@property (copy) NSString *key;
 @property (retain) NSNumber *owned;  // longLongValue
-@property (retain) GTLUseritemsKey *productKey;
+@property (copy) NSString *productKey;
 @property (copy) NSString *userId;
 @end

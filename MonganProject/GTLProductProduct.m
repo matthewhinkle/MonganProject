@@ -17,8 +17,6 @@
 
 #import "GTLProductProduct.h"
 
-#import "GTLProductKey.h"
-
 // ----------------------------------------------------------------------------
 //
 //   GTLProductProduct

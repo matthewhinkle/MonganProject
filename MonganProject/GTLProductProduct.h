@@ -21,8 +21,6 @@
   #import "GTLObject.h"
 #endif
 
-@class GTLProductKey;
-
 // ----------------------------------------------------------------------------
 //
 //   GTLProductProduct
@@ -30,7 +28,7 @@
 
 @interface GTLProductProduct : GTLObject
 @property (copy) NSString *imageUrl;
-@property (retain) GTLProductKey *key;
+@property (copy) NSString *key;
 @property (retain) NSNumber *priceTime100;  // intValue
 @property (copy) NSString *productDiscription;
 @property (copy) NSString *productName;

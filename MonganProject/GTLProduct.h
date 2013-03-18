@@ -14,7 +14,6 @@
 //   This is an API
 
 #import "GTLProductCollection.h"
-#import "GTLProductKey.h"
 #import "GTLProductProduct.h"
 
 #import "GTLQueryProduct.h"
