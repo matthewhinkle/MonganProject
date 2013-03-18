@@ -309,19 +309,19 @@
         <scene sceneID="rfy-tx-Dli">
             <objects>
                 <tableViewController id="0o8-DR-78o" customClass="RootViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="E1P-B8-kFI">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="E1P-B8-kFI">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="88" id="Dsj-sw-dbG" customClass="InventoryItemCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="inventoryItemCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="88" id="Dsj-sw-dbG" customClass="InventoryItemCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-Kd-qnX">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-Kd-qnX" customClass="AsyncImageView">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="77" id="GF7-qQ-BdO"/>
                                                 <constraint firstAttribute="width" constant="77" id="ddX-g5-VEC"/>
@@ -368,10 +368,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="nYo-Kd-qnX" firstAttribute="top" secondItem="Dsj-sw-dbG" secondAttribute="top" constant="5" id="D0T-Lg-JFT"/>
                                     <constraint firstItem="nYo-Kd-qnX" firstAttribute="leading" secondItem="Dsj-sw-dbG" secondAttribute="leading" constant="4" id="GZV-yW-x50"/>
                                     <constraint firstItem="nYo-Kd-qnX" firstAttribute="top" secondItem="udB-uc-jmt" secondAttribute="top" type="default" id="Mvb-rY-efJ"/>
                                     <constraint firstItem="udB-uc-jmt" firstAttribute="leading" secondItem="Dsj-sw-dbG" secondAttribute="leading" constant="85" type="user" id="QvD-Xo-Q06"/>
-                                    <constraint firstItem="nYo-Kd-qnX" firstAttribute="top" secondItem="Dsj-sw-dbG" secondAttribute="top" constant="5" id="VpM-fb-hNd"/>
                                     <constraint firstItem="udB-uc-jmt" firstAttribute="bottom" secondItem="nYo-Kd-qnX" secondAttribute="bottom" type="default" id="XW4-vE-vZX"/>
                                     <constraint firstItem="udB-uc-jmt" firstAttribute="trailing" secondItem="Dsj-sw-dbG" secondAttribute="trailing" type="default" id="oSZ-sq-7M9"/>
                                 </constraints>
@@ -436,13 +436,16 @@
                 <relationship kind="action" name="cancelButtonClicked:" candidateClass="UIButton"/>
             </relationships>
         </class>
+        <class className="AsyncImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AsyncImageView.h"/>
+        </class>
         <class className="InventoryItemCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InventoryItemCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="amountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="horizontalSpacer" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="thumbnail" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="thumbnail" candidateClass="AsyncImageView"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

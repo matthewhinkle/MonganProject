@@ -57,23 +57,25 @@ static MonganProjectService * instance;
         }
         __block int itemsLeft = items.count;
         NSMutableArray * ret = [NSMutableArray array];
-        for(GTLUseritemsDesiredItem * item in items) {
-            __block DesiredItemAndProductAreBothHeldInThisClass * thisItem = [[DesiredItemAndProductAreBothHeldInThisClass alloc] init];
+        [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            GTLUseritemsDesiredItem * item = obj;
+            DesiredItemAndProductAreBothHeldInThisClass * thisItem = [[DesiredItemAndProductAreBothHeldInThisClass alloc] init];
             thisItem.desiredItem = item;
             [ret addObject:thisItem];
             GTLQueryProduct * subQuery = [GTLQueryProduct queryForGetWithIdentifier:item.productKey];
             [self.productService executeQuery:subQuery completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+                NSLog(@"Got the callback!");
                 thisItem.product = object;
-                 itemsLeft -= 1;
+                itemsLeft -= 1;
+                if(itemsLeft == 0) {
+                    handler(ticket, ret, nil);
+                }
             }];
-        }
-        while(itemsLeft > 0) {
-            [NSThread sleepForTimeInterval:0];
-        }
-        handler(ticket, ret, nil);
+        }];
     }];
 }
 
+<<<<<<< HEAD
 - (void) getItemsForUpc:(NSString *)upc withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback {
 	GTLQueryProduct * query = [GTLQueryProduct queryForSearchUpcWithUpc:upc];
 	[[self productService] executeQuery:query completionHandler:^(GTLServiceTicket * ticket, id obj, NSError * error) {
@@ -109,5 +111,7 @@ static MonganProjectService * instance;
 		callback(ticket, products, nil);
 	}];
 }
+=======
+>>>>>>> ef87446d78567dbeafa0646e0682d60ce096c601
 
 @end
