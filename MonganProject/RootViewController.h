@@ -13,6 +13,4 @@
 
 @interface RootViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *tabsBar;
-
 @end

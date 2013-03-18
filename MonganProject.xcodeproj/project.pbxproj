@@ -25,9 +25,6 @@
 		48278DAA16F502C5009DF966 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DA916F502C5009DF966 /* RootViewController.m */; };
 		48278DAC16F502C5009DF966 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 48278DAB16F502C5009DF966 /* second.png */; };
 		48278DAE16F502C5009DF966 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48278DAD16F502C5009DF966 /* second@2x.png */; };
-		48278DBC16F505F1009DF966 /* DesiredItemTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DBB16F505F1009DF966 /* DesiredItemTableViewDataSource.m */; };
-		48278DBF16F506CA009DF966 /* OwnedItemTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DBE16F506CA009DF966 /* OwnedItemTableViewDataSource.m */; };
-		48278DC216F5071E009DF966 /* NeedItemTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 48278DC116F5071E009DF966 /* NeedItemTableViewDataSource.m */; };
 		48278DE716F50E37009DF966 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278DE616F50E37009DF966 /* AVFoundation.framework */; };
 		48278DE916F50E45009DF966 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278DE816F50E45009DF966 /* CoreMedia.framework */; };
 		48278DEB16F50E51009DF966 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278DEA16F50E51009DF966 /* CoreVideo.framework */; };
@@ -325,12 +322,6 @@
 		48278DA916F502C5009DF966 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		48278DAB16F502C5009DF966 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		48278DAD16F502C5009DF966 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		48278DBA16F505F1009DF966 /* DesiredItemTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesiredItemTableViewDataSource.h; sourceTree = "<group>"; };
-		48278DBB16F505F1009DF966 /* DesiredItemTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesiredItemTableViewDataSource.m; sourceTree = "<group>"; };
-		48278DBD16F506CA009DF966 /* OwnedItemTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnedItemTableViewDataSource.h; sourceTree = "<group>"; };
-		48278DBE16F506CA009DF966 /* OwnedItemTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnedItemTableViewDataSource.m; sourceTree = "<group>"; };
-		48278DC016F5071E009DF966 /* NeedItemTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeedItemTableViewDataSource.h; sourceTree = "<group>"; };
-		48278DC116F5071E009DF966 /* NeedItemTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeedItemTableViewDataSource.m; sourceTree = "<group>"; };
 		48278DE616F50E37009DF966 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		48278DE816F50E45009DF966 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		48278DEA16F50E51009DF966 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -876,7 +867,6 @@
 				482795E416F56B65009DF966 /* API */,
 				4827907116F55CFC009DF966 /* GTL */,
 				48278DB916F5042B009DF966 /* View Controllers */,
-				48278DB516F50356009DF966 /* List */,
 				48278D9516F502C5009DF966 /* AppDelegate.h */,
 				48278D9616F502C5009DF966 /* AppDelegate.m */,
 				48278D9E16F502C5009DF966 /* MainStoryboard.storyboard */,
@@ -903,19 +893,6 @@
 				48278D9C16F502C5009DF966 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		48278DB516F50356009DF966 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				48278DBA16F505F1009DF966 /* DesiredItemTableViewDataSource.h */,
-				48278DBB16F505F1009DF966 /* DesiredItemTableViewDataSource.m */,
-				48278DBD16F506CA009DF966 /* OwnedItemTableViewDataSource.h */,
-				48278DBE16F506CA009DF966 /* OwnedItemTableViewDataSource.m */,
-				48278DC016F5071E009DF966 /* NeedItemTableViewDataSource.h */,
-				48278DC116F5071E009DF966 /* NeedItemTableViewDataSource.m */,
-			);
-			name = List;
 			sourceTree = "<group>";
 		};
 		48278DB916F5042B009DF966 /* View Controllers */ = {
@@ -1841,9 +1818,6 @@
 				48278D9716F502C5009DF966 /* AppDelegate.m in Sources */,
 				48278DA316F502C5009DF966 /* AddItemViewController.m in Sources */,
 				48278DAA16F502C5009DF966 /* RootViewController.m in Sources */,
-				48278DBC16F505F1009DF966 /* DesiredItemTableViewDataSource.m in Sources */,
-				48278DBF16F506CA009DF966 /* OwnedItemTableViewDataSource.m in Sources */,
-				48278DC216F5071E009DF966 /* NeedItemTableViewDataSource.m in Sources */,
 				48278F8916F51C08009DF966 /* ZXAztecDecoder.m in Sources */,
 				48278F8A16F51C08009DF966 /* ZXAztecDetector.m in Sources */,
 				48278F8B16F51C08009DF966 /* ZXAztecDetectorResult.m in Sources */,
