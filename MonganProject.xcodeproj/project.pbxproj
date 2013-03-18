@@ -19,6 +19,7 @@
 		278A498D16F697A2002F9806 /* GTLUseritemsDesiredItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A498216F697A2002F9806 /* GTLUseritemsDesiredItem.m */; };
 		278A498E16F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A498416F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m */; };
 		278A499116F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A499016F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m */; };
+		278A499916F6AA50002F9806 /* ModalLoadingOverlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A499816F6AA50002F9806 /* ModalLoadingOverlayController.m */; };
 		48278D8716F502C5009DF966 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8616F502C5009DF966 /* UIKit.framework */; };
 		48278D8916F502C5009DF966 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8816F502C5009DF966 /* Foundation.framework */; };
 		48278D8B16F502C5009DF966 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8A16F502C5009DF966 /* CoreGraphics.framework */; };
@@ -320,6 +321,8 @@
 		278A498416F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUseritemsDesiredItemCollection.m; sourceTree = "<group>"; };
 		278A498F16F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesiredItemAndProductAreBothHeldInThisClass.h; sourceTree = "<group>"; };
 		278A499016F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesiredItemAndProductAreBothHeldInThisClass.m; sourceTree = "<group>"; };
+		278A499716F6AA50002F9806 /* ModalLoadingOverlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalLoadingOverlayController.h; sourceTree = "<group>"; };
+		278A499816F6AA50002F9806 /* ModalLoadingOverlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalLoadingOverlayController.m; sourceTree = "<group>"; };
 		48278D8316F502C5009DF966 /* MonganProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonganProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48278D8616F502C5009DF966 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48278D8816F502C5009DF966 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -921,6 +924,8 @@
 		48278DB916F5042B009DF966 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				278A499716F6AA50002F9806 /* ModalLoadingOverlayController.h */,
+				278A499816F6AA50002F9806 /* ModalLoadingOverlayController.m */,
 				48278DA816F502C5009DF966 /* RootViewController.h */,
 				48278DA916F502C5009DF966 /* RootViewController.m */,
 				48278DA116F502C5009DF966 /* AddItemViewController.h */,
@@ -2038,6 +2043,7 @@
 				278A498D16F697A2002F9806 /* GTLUseritemsDesiredItem.m in Sources */,
 				278A498E16F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m in Sources */,
 				278A499116F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m in Sources */,
+				278A499916F6AA50002F9806 /* ModalLoadingOverlayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
