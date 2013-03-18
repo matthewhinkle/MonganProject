@@ -46,7 +46,7 @@
 			
 			if([[[self item] desiredItem] desired]) {
 				[[self desiredLabel] setText:[[[[self item] desiredItem] desired] stringValue]];
-				[[self hasStepper] setValue:[[[[self item] desiredItem] desired] doubleValue]];
+				[[self desiredStepper] setValue:[[[[self item] desiredItem] desired] doubleValue]];
 			} else {
 				[[self desiredLabel] setText:@"-"];
 			}
@@ -58,12 +58,15 @@
 			[[self desiredLabel] setText:@"-"];
 		}
 		
-		if([[[self item] product] imageUrl]) {
-			[[self imageView] setImage:[self scaleImage:
-										[UIImage imageWithData:
-										 [NSData dataWithContentsOfURL:[NSURL URLWithString:[[[self item] product] imageUrl]]]]]];
+		NSLog(@"loading image with url: %@", [[[self item] product] imageUrl]);
+		
+		[[self imageView] setContentMode:UIViewContentModeScaleAspectFill];
+		[[self imageView] setClipsToBounds:YES];
+		
+		if(self.item.product.imageUrl) {
+			[[self imageView] setImageURL:[NSURL URLWithString: self.item.product.imageUrl]];
 		} else {
-			[[self imageView] setImage:[self scaleImage:[UIImage imageNamed:@"placeholder.png"]]];
+			[[self imageView] setImage:[UIImage imageNamed:@"placeholder.png"]];
 		}
 	}
 }
@@ -75,7 +78,10 @@
 }
 
 - (IBAction)hasValueChanged:(UIStepper *)sender {
-	if([sender value] > 0) {
+	if([sender value] > 0 && [sender value] <= [[self desiredStepper] value]) {
+		[[self desiredItem] setOwned:[NSNumber numberWithDouble:[sender value]]];
+	} else if([sender value] > [[self desiredStepper] value]) {
+		[sender setValue:[[self desiredStepper] value]];
 		[[self desiredItem] setOwned:[NSNumber numberWithDouble:[sender value]]];
 	} else {
 		[sender setValue:0];
@@ -85,7 +91,10 @@
 }
 
 - (IBAction)desiredValueChanged:(UIStepper *)sender {
-	if([sender value] > 0) {
+	if([sender value] > 0 && [sender value] >= [[self hasStepper] value]) {
+		[[self desiredItem] setDesired:[NSNumber numberWithDouble:[sender value]]];
+	} else if([sender value] < [[self hasStepper] value]) {
+		[sender setValue:[[self hasStepper] value]];
 		[[self desiredItem] setDesired:[NSNumber numberWithDouble:[sender value]]];
 	} else {
 		[sender setValue:0];
@@ -110,6 +119,7 @@
 	GTLProductProduct * product = [[GTLProductProduct alloc] init];
 	[product setProductName:[[self itemName] text]];
 	[product setProductDiscription:[[self description] text]];
+	[product setImageUrl:[[[self item] product] imageUrl]];
 	
 	if(!([[[self item] product] key])) {
 		[[MonganProjectService sharedInstance] insertProduct:product withCallback:^(GTLServiceTicket *ticket, id obj, NSError *error) {
@@ -134,15 +144,24 @@
 	} else {
 		[product setKey:[[[self item] product] key]];
 		
-		[[MonganProjectService sharedInstance] upsertDesiredItem:item withCallback:^(GTLServiceTicket *ticket, id object, NSError *error) {
+		[[MonganProjectService sharedInstance] updateProduct:product withCallback:^(GTLServiceTicket *ticket, id obj, NSError *error) {
 			if(error) {
-				NSLog(@"upsert error for existing product : %@", error);
+				NSLog(@"update error : %@", error);
 				return;
 			}
 			
-			NSLog(@"upserted object : %@", object);
+			NSLog(@"updated product : %@", obj);
 			
-			[self performSegueWithIdentifier:@"saveItem" sender:self];
+			[[MonganProjectService sharedInstance] upsertDesiredItem:item withCallback:^(GTLServiceTicket *ticket, id object, NSError *error) {
+				if(error) {
+					NSLog(@"upsert error for existing product : %@", error);
+					return;
+				}
+				
+				NSLog(@"upserted object : %@", object);
+				
+				[self performSegueWithIdentifier:@"saveItem" sender:self];
+			}];
 		}];
 	}
 }
@@ -163,18 +182,31 @@
     [picker dismissViewControllerAnimated:YES completion:^{
 		[[self imageView] setImage:[self scaleImage:image]];
 		
-		[[self class] uploadPhoto:UIImageJPEGRepresentation(image, 1)
-							title:@""
-					  description:@""
-					imgurClientID:kImgurApiKey
-				  completionBlock:^(NSString *result) {
-					  NSLog(@"received : %@", result);
-				  } failureBlock:^(NSURLResponse *response, NSError *error, NSInteger status) {
-					  NSLog(@"bad response: %@", response);
-					  NSLog(@"error: %@", error);
-				  }];
-		[[ModalLoadingOverlayController sharedInstance] remove];
+		NSString * base64Image = [[UIImageJPEGRepresentation(image, 1) base64EncodingWithLineLength:0] encodedURLString];
+			
+		NSString *uploadCall = [NSString stringWithFormat:@"key=%@&image=%@", kImgurApiKey, base64Image];
+		
+		NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.imgur.com/2/upload.json"]];
+		[request setHTTPMethod:@"POST"];
+		[request setValue:[NSString stringWithFormat:@"%d",[uploadCall length]] forHTTPHeaderField:@"Content-length"];
+		[request setHTTPBody:[uploadCall dataUsingEncoding:NSUTF8StringEncoding]];
+		
+		[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	}];
+}
+
+- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+	NSLog(@"received : %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+	
+	NSError * error;
+	id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+	assert(!(error));
+	
+	[[[self item] product] setImageUrl:[[[json objectForKey:@"upload"] objectForKey:@"links"] objectForKey:@"original"]];
+	
+	NSLog(@"it is: %@", [[[self item] product] imageUrl]);
+	
+	[[ModalLoadingOverlayController sharedInstance] remove];
 }
 
 - (UIImage *) scaleImage:(UIImage *)image {
@@ -209,86 +241,5 @@
 	
 	return bounds;
 }
-
-+ (void)uploadPhoto:(NSData*)imageData
-              title:(NSString*)title
-        description:(NSString*)description
-      imgurClientID:(NSString*)clientID
-    completionBlock:(void(^)(NSString* result))completion
-       failureBlock:(void(^)(NSURLResponse *response, NSError *error, NSInteger status))failureBlock
-{
-	NSAssert(imageData, @"Image data is required");
-	NSAssert(clientID, @"Client ID is required");
-	
-	NSString *urlString = @"http://api.imgur.com/2/image/.json";
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init] ;
-	[request setURL:[NSURL URLWithString:urlString]];
-	[request setHTTPMethod:@"POST"];
-	
-	NSMutableData *requestBody = [[NSMutableData alloc] init];
-	
-	NSString *boundary = @"---------------------------0983745982375409872438752038475287";
-	
-	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-	[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
-	
-	// Add client ID as authrorization header
-	[request addValue:[NSString stringWithFormat:@"Client-ID %@", clientID] forHTTPHeaderField:@"Authorization"];
-	
-	// Image File Data
-	[requestBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[requestBody appendData:[@"Content-Disposition: attachment; name=\"image\"; filename=\".jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	
-	[requestBody appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[requestBody appendData:[NSData dataWithData:imageData]];
-	[requestBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	
-	// Title parameter
-	if (title) {
-		[requestBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-		[requestBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"title\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-		[requestBody appendData:[title dataUsingEncoding:NSUTF8StringEncoding]];
-		[requestBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	}
-	
-	// Description parameter
-	if (description) {
-		[requestBody appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-		[requestBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"description\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-		[requestBody appendData:[description dataUsingEncoding:NSUTF8StringEncoding]];
-		[requestBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	}
-	
-	[requestBody appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	
-	[request setHTTPBody:requestBody];
-	
-	[NSURLConnection sendAsynchronousRequest:request
-									   queue:[NSOperationQueue mainQueue]
-						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-							   NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data
-																								  options:NSJSONReadingMutableContainers
-																									error:nil];
-							   if ([responseDictionary valueForKeyPath:@"data.error"]) {
-								   if (failureBlock) {
-									   if (!error) {
-										   // If no error has been provided, create one based on the response received from the server
-										   error = [NSError errorWithDomain:@"imguruploader"
-																	   code:10000
-																   userInfo:@{NSLocalizedFailureReasonErrorKey :
-													[responseDictionary valueForKeyPath:@"data.error"]}];
-									   }
-									   failureBlock(response, error, [[responseDictionary valueForKey:@"status"] intValue]);
-								   }
-							   } else {
-								   if (completion) {
-									   completion([responseDictionary valueForKeyPath:@"data"]);
-								   }
-								   
-							   }
-							   
-						   }];
-}
-
 
 @end

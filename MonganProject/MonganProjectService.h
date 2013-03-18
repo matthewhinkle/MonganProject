@@ -34,4 +34,6 @@
 
 - (void) insertProduct:(GTLProductProduct *)product withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback;
 
+- (void) updateProduct:(GTLProductProduct *)product withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback;
+
 @end

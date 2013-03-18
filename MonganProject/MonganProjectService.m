@@ -146,7 +146,19 @@ static MonganProjectService * instance;
 }
 
 - (void) insertProduct:(GTLProductProduct *)product withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback {
-	GTLQueryUseritems * query = [GTLQueryProduct queryForInsertWithObject:product];
+	GTLQueryProduct * query = [GTLQueryProduct queryForInsertWithObject:product];
+	[[self productService] executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+		if(error) {
+			callback(ticket, nil, error);
+			return;
+		}
+		
+		callback(ticket, object, nil);
+	}];
+}
+
+- (void) updateProduct:(GTLProductProduct *)product withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback {
+	GTLQueryProduct * query = [GTLQueryProduct queryForUpdateWithObject:product];	
 	[[self productService] executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
 		if(error) {
 			callback(ticket, nil, error);

@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AsyncImageView.h"
 #import "DesiredItemAndProductAreBothHeldInThisClass.h"
 
+#import "NSData+Base64.h"
+#import "NSString+URLEncoding.h"
+#import "NSString+URLEscape.h"
 #import "ModalLoadingOverlayController.h"
 #import "MonganProjectService.h"
 
-@interface ItemDetailsViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ItemDetailsViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, NSURLConnectionDataDelegate>
 
 @property (strong, nonatomic) DesiredItemAndProductAreBothHeldInThisClass * item;
 
@@ -31,7 +35,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *description;
 - (IBAction)descriptionReturnPressed:(UITextField *)sender;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet AsyncImageView *imageView;
+
 
 
 
