@@ -45,6 +45,8 @@ static MonganProjectService * instance;
 {
     GTLQueryUseritems * query = [GTLQueryUseritems queryForList];
     [self.userItemService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+        GTLUseritemsDesiredItemCollection * itemCollection = object;
+        NSArray * items = itemCollection.items;
         
     }];
 }
