@@ -11,6 +11,7 @@
 @interface ResultViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchbar;
 @property (strong, nonatomic) NSArray * products;
+@property (strong, nonatomic) DesiredItemAndProductAreBothHeldInThisClass * item;
 @end
 
 @implementation ResultViewController
@@ -72,12 +73,20 @@
 	}
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if([[segue identifier] isEqualToString:@"itemDetails"]) {
+		[[segue destinationViewController] setItem:[self item]];
+	}
+}
+
 #pragma mark - UI scrollbar delegate
 - (void) searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+	[self setSearchByUpc:NO];
 	[self loadResults];
 }
 
 - (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	[self setSearchByUpc:NO];
 	[self loadResults];
 }
 
@@ -107,13 +116,22 @@
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+	[[ModalLoadingOverlayController sharedInstance] present];
+	[[MonganProjectService sharedInstance] getDesiredItemForProduct:[[self products] objectAtIndex:[indexPath row]] withCallback:^(GTLServiceTicket *ticker, id obj, NSError *error) {
+		
+		DesiredItemAndProductAreBothHeldInThisClass * item = [[DesiredItemAndProductAreBothHeldInThisClass alloc] init];
+		[item setProduct:[[self products] objectAtIndex:[indexPath row]]];
+		[item setDesiredItem:obj];
+		[self setItem:item];
+		
+		if([self searchByUpc]) {
+			[[item product] setUpcCode:[self upc]];
+		}
+		
+		[[ModalLoadingOverlayController sharedInstance] remove];
+		
+		[self performSegueWithIdentifier:@"itemDetails" sender:self];
+	}];
 }
 
 @end

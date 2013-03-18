@@ -83,6 +83,20 @@ static MonganProjectService * instance;
     }];
 }
 
+- (void) upsertDesiredItem:(GTLUseritemsDesiredItem *)desiredItem withCallback:(void (^)(GTLServiceTicket * ticket, id object, NSError * error))callback {
+	GTLQueryUseritems * query = [GTLQueryUseritems queryForUpsertWithProductKey:[desiredItem productKey]
+																		desired:[[desiredItem desired] longLongValue]
+																		   have:[[desiredItem owned] longLongValue]];
+	[[self userItemService] executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+		if(error) {
+			callback(ticket, nil, error);
+			return;
+		}
+		
+		callback(ticket, object, nil);
+	}];
+}
+
 - (void) getItemsForUpc:(NSString *)upc withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback {
 	GTLQueryProduct * query = [GTLQueryProduct queryForSearchUpcWithUpc:upc];
 	[[self productService] executeQuery:query completionHandler:^(GTLServiceTicket * ticket, id obj, NSError * error) {
@@ -116,6 +130,30 @@ static MonganProjectService * instance;
 		}
 		
 		callback(ticket, products, nil);
+	}];
+}
+
+- (void) getDesiredItemForProduct:(GTLProductProduct *)product withCallback:(void (^)(GTLServiceTicket * ticker, id obj, NSError * error))callback {
+	GTLQueryUseritems * query = [GTLQueryUseritems queryForGetWithProductKey:[product key]];
+	[[self userItemService] executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+		if(error) {
+			callback(ticket, nil, error);
+			return;
+		}
+		
+		callback(ticket, object, nil);
+	}];
+}
+
+- (void) insertProduct:(GTLProductProduct *)product withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback {
+	GTLQueryUseritems * query = [GTLQueryProduct queryForInsertWithObject:product];
+	[[self productService] executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+		if(error) {
+			callback(ticket, nil, error);
+			return;
+		}
+		
+		callback(ticket, object, nil);
 	}];
 }
 

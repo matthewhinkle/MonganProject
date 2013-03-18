@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DesiredItemAndProductAreBothHeldInThisClass.h"
+
+#import "MonganProjectService.h"
+
 @interface ItemDetailsViewController : UIViewController
+
+@property (strong, nonatomic) DesiredItemAndProductAreBothHeldInThisClass * item;
 
 @property (weak, nonatomic) IBOutlet UITextField *itemName;
 - (IBAction)itemNameReturnPressed:(UITextField *)sender;

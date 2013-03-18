@@ -20,7 +20,13 @@
 {
     [super viewDidLoad];
 	
+	_scanViewController = nil;
+	_upc = nil;
 	_searchByUpc = NO;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 }
 
 - (void) didReceiveMemoryWarning
@@ -43,15 +49,17 @@
 - (void) scanView:(UIView *)scanView didCaptureResult:(NSString *)result {
 	[[self scanViewController] dismissViewControllerAnimated:YES completion:^{
 		[self setSearchByUpc:YES];
-		[self setUpc:[self upc]];
+		[self setUpc:result];
 		[self performSegueWithIdentifier:@"selectItem" sender:self];
 	}];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	[[segue destinationViewController] setSearchByUpc:[self searchByUpc]];
-	if([self searchByUpc]) {
-		[[segue destinationViewController] setUpc:([self upc])];
+	if([[segue identifier] isEqualToString:@"selectItem"]) {
+		[[segue destinationViewController] setSearchByUpc:[self searchByUpc]];
+		if([self searchByUpc]) {
+			[[segue destinationViewController] setUpc:([self upc])];
+		}
 	}
 }
 
