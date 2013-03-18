@@ -9,6 +9,9 @@
 #import "RootViewController.h"
 
 @interface RootViewController ()
+
+@property NSArray * items;
+
 @end
 
 @implementation RootViewController
@@ -23,7 +26,14 @@
 {
     [[ModalLoadingOverlayController sharedInstance] present];
     [[MonganProjectService sharedInstance] getItemsForUserWithCallback:^(GTLServiceTicket *ticket, id object, NSError *error) {
-            [[ModalLoadingOverlayController sharedInstance] remove];
+        if(error) {
+            [self showAlertWithTitle:@"Network error!" AndMessage:@"Failed to retreive your inventory list!"];
+            return;
+        }
+        if([object isKindOfClass:[NSArray class]]) {
+            self.items = object;
+        }
+        [[ModalLoadingOverlayController sharedInstance] remove];
     }];
 }
 
@@ -37,18 +47,27 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if(self.items && self.items.count > 0) {
+        return 1;
+    }
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(self.items && self.items.count > 0) {
+        return self.items.count;
+    }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"BoardsCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"InventoryItemCell";
+    InventoryItemCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    DesiredItemAndProductAreBothHeldInThisClass * item = [self.items objectAtIndex:indexPath.row];
+    [cell renderDesiredItem:item];
     
     return cell;
 }
@@ -79,6 +98,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+-(void) showAlertWithTitle:(NSString *)title AndMessage:(NSString *)message {
+    UIAlertView * view = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [view show];
 }
 
 @end
