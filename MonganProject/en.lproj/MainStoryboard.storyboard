@@ -396,6 +396,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="9qc-t8-otq" kind="push" identifier="itemDetails" id="WUd-eh-NCl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0Y-FI-FeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -445,7 +448,7 @@
                 <relationship kind="outlet" name="amountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="horizontalSpacer" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="thumbnail" candidateClass="BetterAsyncImageView"/>
+                <relationship kind="outlet" name="thumbnail" candidateClass="AsyncImageView"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -496,4 +499,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="WUd-eh-NCl"/>
+    </inferredMetricsTieBreakers>
 </document>

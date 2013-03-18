@@ -75,6 +75,14 @@ static MonganProjectService * instance;
     }];
 }
 
+-(void) deleteDesiredByProductId:(NSString *)string WithCallback:(void (^)(GTLServiceTicket *ticket, id object, NSError *error))handler;
+{
+    GTLQueryUseritems * query = [GTLQueryUseritems queryForDeleteWithProductKey:string];
+    [self.userItemService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+        handler(ticket, object, error);
+    }];
+}
+
 - (void) getItemsForUpc:(NSString *)upc withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback {
 	GTLQueryProduct * query = [GTLQueryProduct queryForSearchUpcWithUpc:upc];
 	[[self productService] executeQuery:query completionHandler:^(GTLServiceTicket * ticket, id obj, NSError * error) {

@@ -22,6 +22,8 @@
 
 -(void) getItemsForUserWithCallback:(void (^)(GTLServiceTicket *ticket, id object, NSError *error))handler;
 
+-(void) deleteDesiredByProductId:(NSString *)string WithCallback:(void (^)(GTLServiceTicket *ticket, id object, NSError *error))handler;
+
 - (void) getItemsForUpc:(NSString *)upc withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback;
 
 - (void) getItemsForProductName:(NSString *)productName withCallback:(void (^)(GTLServiceTicket * ticket, id obj, NSError * error))callback;

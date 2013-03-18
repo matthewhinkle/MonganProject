@@ -11,6 +11,7 @@
 @interface RootViewController ()
 
 @property NSArray * items;
+@property DesiredItemAndProductAreBothHeldInThisClass * selected;
 
 @end
 
@@ -85,7 +86,9 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
+    if([segue respondsToSelector:@selector(setItem:)]) {
+        [segue performSelector:@selector(setItem:) withObject:self.selected];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,8 +99,8 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        DesiredItemAndProductAreBothHeldInThisClass * item = [self.items objectAtIndex:indexPath.row];
+        
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -108,7 +111,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.selected = [self.items objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"itemDetails" sender:self];
 }
 
 -(void) showAlertWithTitle:(NSString *)title AndMessage:(NSString *)message {
