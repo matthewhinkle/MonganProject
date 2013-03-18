@@ -30,6 +30,7 @@
 {
     if(item.product.imageUrl) {
         [self.horizontalSpacer setConstant:85];
+        self.imageView.imageURL = [NSURL URLWithString: item.product.imageUrl];
     } else {
         [self.horizontalSpacer setConstant:5];
     }
