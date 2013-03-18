@@ -28,9 +28,11 @@
 
 -(void) renderDesiredItem:(DesiredItemAndProductAreBothHeldInThisClass *)item
 {
+    [self.thumbnail setContentMode:UIViewContentModeScaleAspectFill];
+    self.thumbnail.clipsToBounds = YES;
     if(item.product.imageUrl) {
         [self.horizontalSpacer setConstant:85];
-        self.imageView.imageURL = [NSURL URLWithString: item.product.imageUrl];
+        self.thumbnail.imageURL = [NSURL URLWithString: item.product.imageUrl];
     } else {
         [self.horizontalSpacer setConstant:5];
     }

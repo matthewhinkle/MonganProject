@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
 	
-	[self loadData];
+	
 }
 
 -(void) loadData
@@ -37,6 +37,11 @@
         [self.tableView reloadData];
         [[ModalLoadingOverlayController sharedInstance] remove];
     }];
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning

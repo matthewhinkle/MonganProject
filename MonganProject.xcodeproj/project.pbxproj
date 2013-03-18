@@ -20,7 +20,8 @@
 		278A498E16F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A498416F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m */; };
 		278A499116F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A499016F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m */; };
 		278A499916F6AA50002F9806 /* ModalLoadingOverlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278A499816F6AA50002F9806 /* ModalLoadingOverlayController.m */; };
-		27D86A4116F6B9CA007A4753 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D86A4016F6B9C9007A4753 /* AsyncImageView.m */; };
+		27D86A4C16F6C104007A4753 /* nothing.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D86A4B16F6C104007A4753 /* nothing.png */; };
+		27D86A4F16F6C16D007A4753 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D86A4E16F6C16D007A4753 /* AsyncImageView.m */; };
 		48278D8716F502C5009DF966 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8616F502C5009DF966 /* UIKit.framework */; };
 		48278D8916F502C5009DF966 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8816F502C5009DF966 /* Foundation.framework */; };
 		48278D8B16F502C5009DF966 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48278D8A16F502C5009DF966 /* CoreGraphics.framework */; };
@@ -324,8 +325,9 @@
 		278A499016F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesiredItemAndProductAreBothHeldInThisClass.m; sourceTree = "<group>"; };
 		278A499716F6AA50002F9806 /* ModalLoadingOverlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalLoadingOverlayController.h; sourceTree = "<group>"; };
 		278A499816F6AA50002F9806 /* ModalLoadingOverlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalLoadingOverlayController.m; sourceTree = "<group>"; };
-		27D86A3F16F6B9C9007A4753 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
-		27D86A4016F6B9C9007A4753 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		27D86A4B16F6C104007A4753 /* nothing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nothing.png; sourceTree = "<group>"; };
+		27D86A4D16F6C16D007A4753 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		27D86A4E16F6C16D007A4753 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		48278D8316F502C5009DF966 /* MonganProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonganProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48278D8616F502C5009DF966 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48278D8816F502C5009DF966 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -891,8 +893,8 @@
 			isa = PBXGroup;
 			children = (
 				48FC3F0A16F663A000DBA723 /* MonganProject.entitlements */,
-				27D86A3F16F6B9C9007A4753 /* AsyncImageView.h */,
-				27D86A4016F6B9C9007A4753 /* AsyncImageView.m */,
+				27D86A4D16F6C16D007A4753 /* AsyncImageView.h */,
+				27D86A4E16F6C16D007A4753 /* AsyncImageView.m */,
 				278A499216F698BC002F9806 /* API */,
 				4827907116F55CFC009DF966 /* GTL */,
 				48278DB916F5042B009DF966 /* View Controllers */,
@@ -915,6 +917,7 @@
 		48278D8D16F502C5009DF966 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27D86A4B16F6C104007A4753 /* nothing.png */,
 				48278D8E16F502C5009DF966 /* MonganProject-Info.plist */,
 				48278D8F16F502C5009DF966 /* InfoPlist.strings */,
 				48278D9216F502C5009DF966 /* main.m */,
@@ -1808,6 +1811,7 @@
 				482790C916F55D30009DF966 /* UnitTests-Info.plist in Resources */,
 				48FC3FA616F66E4D00DBA723 /* ReleaseNotes.txt in Resources */,
 				48FC3FA816F66E4D00DBA723 /* GTMOAuth2ViewTouch.xib in Resources */,
+				27D86A4C16F6C104007A4753 /* nothing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2049,7 +2053,7 @@
 				278A498E16F697A2002F9806 /* GTLUseritemsDesiredItemCollection.m in Sources */,
 				278A499116F69887002F9806 /* DesiredItemAndProductAreBothHeldInThisClass.m in Sources */,
 				278A499916F6AA50002F9806 /* ModalLoadingOverlayController.m in Sources */,
-				27D86A4116F6B9CA007A4753 /* AsyncImageView.m in Sources */,
+				27D86A4F16F6C16D007A4753 /* AsyncImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

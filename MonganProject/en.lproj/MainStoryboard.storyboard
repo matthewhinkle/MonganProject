@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="I0K-fU-hOb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="I0K-fU-hOb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -324,7 +324,6 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-Kd-qnX" customClass="AsyncImageView">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="77" id="GF7-qQ-BdO"/>
-                                                <constraint firstAttribute="width" constant="77" id="ddX-g5-VEC"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udB-uc-jmt">
@@ -369,10 +368,11 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="nYo-Kd-qnX" firstAttribute="top" secondItem="Dsj-sw-dbG" secondAttribute="top" constant="5" id="D0T-Lg-JFT"/>
-                                    <constraint firstItem="nYo-Kd-qnX" firstAttribute="leading" secondItem="Dsj-sw-dbG" secondAttribute="leading" constant="4" id="GZV-yW-x50"/>
                                     <constraint firstItem="nYo-Kd-qnX" firstAttribute="top" secondItem="udB-uc-jmt" secondAttribute="top" type="default" id="Mvb-rY-efJ"/>
                                     <constraint firstItem="udB-uc-jmt" firstAttribute="leading" secondItem="Dsj-sw-dbG" secondAttribute="leading" constant="85" type="user" id="QvD-Xo-Q06"/>
+                                    <constraint firstItem="udB-uc-jmt" firstAttribute="leading" secondItem="nYo-Kd-qnX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="WFv-iu-ZsP"/>
                                     <constraint firstItem="udB-uc-jmt" firstAttribute="bottom" secondItem="nYo-Kd-qnX" secondAttribute="bottom" type="default" id="XW4-vE-vZX"/>
+                                    <constraint firstItem="nYo-Kd-qnX" firstAttribute="leading" secondItem="Dsj-sw-dbG" secondAttribute="leading" type="default" id="YxI-Pm-Rqu"/>
                                     <constraint firstItem="udB-uc-jmt" firstAttribute="trailing" secondItem="Dsj-sw-dbG" secondAttribute="trailing" type="default" id="oSZ-sq-7M9"/>
                                 </constraints>
                                 <connections>
@@ -445,7 +445,7 @@
                 <relationship kind="outlet" name="amountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="horizontalSpacer" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="thumbnail" candidateClass="AsyncImageView"/>
+                <relationship kind="outlet" name="thumbnail" candidateClass="BetterAsyncImageView"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
