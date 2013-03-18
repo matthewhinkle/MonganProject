@@ -10,7 +10,7 @@
 
 @interface RootViewController ()
 
-@property NSArray * items;
+@property NSMutableArray * items;
 @property DesiredItemAndProductAreBothHeldInThisClass * selected;
 
 @end
@@ -100,7 +100,15 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         DesiredItemAndProductAreBothHeldInThisClass * item = [self.items objectAtIndex:indexPath.row];
-        
+        [[MonganProjectService sharedInstance] deleteDesiredByProductId:item.product.key WithCallback:^(GTLServiceTicket *ticket, id object, NSError *error) {
+            if(error) {
+                [self showAlertWithTitle:@"Error Deleting Item!" AndMessage:error.description];
+                [self loadData];
+                return;
+            }
+        }];
+        [self.items removeObject:item];
+        [self.tableView reloadData];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
