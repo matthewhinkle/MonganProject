@@ -34,7 +34,7 @@
         [self.horizontalSpacer setConstant:5];
     }
     self.titleLabel.text = item.product.productName;
-    self.descriptionLabel.text = item.product.description;
+    self.descriptionLabel.text = item.product.productDiscription;
     self.amountLabel = [NSString stringWithFormat:@"%@/%@", item.desiredItem.owned, item.desiredItem.desired];
 }
 

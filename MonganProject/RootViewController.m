@@ -33,6 +33,7 @@
         if([object isKindOfClass:[NSArray class]]) {
             self.items = object;
         }
+        [self.tableView reloadData];
         [[ModalLoadingOverlayController sharedInstance] remove];
     }];
 }
@@ -53,6 +54,10 @@
     return 0;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 88;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(self.items && self.items.count > 0) {
@@ -63,7 +68,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"InventoryItemCell";
+    static NSString *CellIdentifier = @"ImageCell";
     InventoryItemCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     DesiredItemAndProductAreBothHeldInThisClass * item = [self.items objectAtIndex:indexPath.row];
