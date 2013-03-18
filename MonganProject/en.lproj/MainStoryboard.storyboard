@@ -423,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qb6-IS-dZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="-131"/>
+            <point key="canvasLocation" x="-312" y="-174"/>
         </scene>
     </scenes>
     <resources>
@@ -461,6 +461,12 @@
                 <relationship kind="outlet" name="hasStepper" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="itemName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ModalLoadingOverlayController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModalLoadingOverlayController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
