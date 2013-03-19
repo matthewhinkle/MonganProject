@@ -68,6 +68,11 @@
 		} else {
 			[[self imageView] setImage:[UIImage imageNamed:@"placeholder.png"]];
 		}
+	} else {
+		[self setItem:[[DesiredItemAndProductAreBothHeldInThisClass alloc] init]];
+		[[self item] setDesiredItem:[[GTLUseritemsDesiredItem alloc] init]];
+		[[self item] setProduct:[[GTLProductProduct alloc] init]];
+		[self populate];
 	}
 }
 
@@ -87,7 +92,7 @@
 		[sender setValue:0];
 	}
 	
-	[self populate];
+	[[self hasLabel] setText:[[[self desiredItem] owned] stringValue]];
 }
 
 - (IBAction)desiredValueChanged:(UIStepper *)sender {
@@ -100,14 +105,14 @@
 		[sender setValue:0];
 	}
 	
-	[self populate];
+	[[self desiredLabel] setText:[[[self desiredItem] desired] stringValue]];
 }
 
 - (IBAction)itemNameReturnPressed:(UITextField *)sender {
-	[self populate];
+	[[[self item] product] setProductName:[[self itemName] text]];
 }
 - (IBAction)descriptionReturnPressed:(UITextField *)sender {
-	[self populate];
+	[[[self item] product] setProductDiscription:[[self description] text]];
 }
 
 - (IBAction)saveButtonClicked:(UIButton *)sender {
@@ -160,7 +165,7 @@
 				
 				NSLog(@"upserted object : %@", object);
 				
-				[self performSegueWithIdentifier:@"saveItem" sender:self];
+				[[self navigationController] popToRootViewControllerAnimated:YES];
 			}];
 		}];
 	}
@@ -178,7 +183,6 @@
 {
     UIImage * image = info[@"UIImagePickerControllerOriginalImage"];
 	
-	[[ModalLoadingOverlayController sharedInstance] present];
     [picker dismissViewControllerAnimated:YES completion:^{
 		[[self imageView] setImage:[self scaleImage:image]];
 		
@@ -192,6 +196,8 @@
 		[request setHTTPBody:[uploadCall dataUsingEncoding:NSUTF8StringEncoding]];
 		
 		[[NSURLConnection alloc] initWithRequest:request delegate:self];
+		
+		[[ModalLoadingOverlayController sharedInstance] present];
 	}];
 }
 

@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
 	
-	
+	[[self navigationItem] setHidesBackButton:YES];
 }
 
 -(void) loadData

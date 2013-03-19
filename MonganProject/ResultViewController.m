@@ -41,12 +41,21 @@
 	}
 	
 	_products = [NSArray array];
+	
+	[[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+																							  target:self
+																							   action:@selector(add)]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+												 
+- (void) add {
+	[self setItem:nil];
+	[self performSegueWithIdentifier:@"itemDetails" sender:self];
 }
 
 - (void) loadResults {
