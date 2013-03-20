@@ -126,8 +126,14 @@
 	[product setProductDiscription:[[self description] text]];
 	[product setImageUrl:[[[self item] product] imageUrl]];
 	
-	if(!([[[self item] product] key])) {
+	if([[[self item] product] upcCode]) {
+		[product setUpcCode:[[[self item] product] upcCode]];
+	}
+	
+	if(!([[[self item] product] key]) || [[[[self item] product] key] isEqualToString:@""]) {
 		[[MonganProjectService sharedInstance] insertProduct:product withCallback:^(GTLServiceTicket *ticket, id obj, NSError *error) {
+			NSLog(@"we are inserting");
+		
 			if(error) {
 				NSLog(@"insert error : %@", error);
 				return;
@@ -143,10 +149,12 @@
 				
 				NSLog(@"upserted object : %@", object);
 				
-				[self performSegueWithIdentifier:@"saveItem" sender:self];
+				[self performSegueWithIdentifier:@"saveItem" sender:nil];
 			}];
 		}];
 	} else {
+		NSLog(@"we are updating");
+	
 		[product setKey:[[[self item] product] key]];
 		
 		[[MonganProjectService sharedInstance] updateProduct:product withCallback:^(GTLServiceTicket *ticket, id obj, NSError *error) {
@@ -165,7 +173,7 @@
 				
 				NSLog(@"upserted object : %@", object);
 				
-				[[self navigationController] popToRootViewControllerAnimated:YES];
+				[self performSegueWithIdentifier:@"saveItem" sender:nil];
 			}];
 		}];
 	}
@@ -195,9 +203,7 @@
 		[request setValue:[NSString stringWithFormat:@"%d",[uploadCall length]] forHTTPHeaderField:@"Content-length"];
 		[request setHTTPBody:[uploadCall dataUsingEncoding:NSUTF8StringEncoding]];
 		
-		[[NSURLConnection alloc] initWithRequest:request delegate:self];
-		
-		[[ModalLoadingOverlayController sharedInstance] present];
+		[[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 	}];
 }
 
@@ -211,8 +217,6 @@
 	[[[self item] product] setImageUrl:[[[json objectForKey:@"upload"] objectForKey:@"links"] objectForKey:@"original"]];
 	
 	NSLog(@"it is: %@", [[[self item] product] imageUrl]);
-	
-	[[ModalLoadingOverlayController sharedInstance] remove];
 }
 
 - (UIImage *) scaleImage:(UIImage *)image {

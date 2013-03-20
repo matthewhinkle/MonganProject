@@ -84,6 +84,12 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if([[segue identifier] isEqualToString:@"itemDetails"]) {
+		if([self searchByUpc]) {
+			[[[self item] product] setUpcCode:[self upc]];
+		} else {
+			[[[self item] product] setUpcCode:nil];
+		}
+	
 		[[segue destinationViewController] setItem:[self item]];
 	}
 }
